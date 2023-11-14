@@ -30,19 +30,7 @@ html(lang="en")
 		link(rel="icon", type="image/x-icon", href="./favicon.ico")
 		each style in styles
 			link(rel="stylesheet" href=style)
-	body
-
-		include header
-		include about
-		include services
-		include skills
-		include works
-		include footer
-		include template-loader
-
-		each script in scripts
-			script(src=script)
-
+		
 		// Yandex.Metrika counter
 		script. 
 			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
@@ -61,3 +49,16 @@ html(lang="en")
 			div
 				img(src="https://mc.yandex.ru/watch/95559401", style="position:absolute; left:-9999px;" alt="")
 		// Yandex.Metrika counter
+		
+	body
+
+		include header
+		include about
+		include services
+		include skills
+		include works
+		include footer
+		include template-loader
+
+		each script in scripts
+			script(src=script)
