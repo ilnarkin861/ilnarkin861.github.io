@@ -1,0 +1,19 @@
+#content{
+	margin-top: -12px;
+	padding: 0 15px;
+
+	.container{
+		@media (max-width: 1060px){
+			display: block;
+		}
+
+		.left,
+		.right{
+			width: 100%;
+
+			@media (max-width: 1060px){
+				margin: auto;
+			}
+		}
+	}
+}

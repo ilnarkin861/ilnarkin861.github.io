@@ -1,0 +1,24 @@
+footer{
+    padding: 50px 0 60px;
+    text-align: center;
+
+    .social ul{
+        font-size: 0;
+        padding-left: 0;
+
+        li{
+            display: inline-block;
+            vertical-align: bottom;
+
+            &:not(:last-child){
+                margin-right: 40px;
+            }
+        }
+    }
+
+    .copyright{
+        margin-top: 25px;
+        color: $secondary_gray;
+        font-size: $copyright_font_size;
+    }
+}

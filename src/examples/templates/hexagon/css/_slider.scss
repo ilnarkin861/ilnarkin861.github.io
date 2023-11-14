@@ -1,0 +1,133 @@
+#slider{
+	width: 100%;
+	position: relative;
+
+	.slide{
+		width: 100%;
+		min-height: 904px;
+		background: $slide_bg_color;
+
+		.content{
+			margin-top: 260px;
+
+			.title{
+				text-transform: uppercase;
+
+				h3{
+					font-size: $slide_title_font_size;
+					font-weight: 700;
+					line-height: 0.9;
+
+					span{
+						font-family: $raleway_heavy_font;
+						font-size: $slide_title_bold_font_size;
+						font-weight: normal;
+
+						&.biggest{
+							font-size: $slide_title_biggest_font_size;
+						}
+
+						@media (max-width: 400px){
+							font-size: $slide_title_bold_sm_font_size;
+						}
+					}
+				}
+			}
+
+			.description{
+				margin-top: 14px;
+				padding-left: 2px;
+				padding-right: 10px;
+				font-size: 16px;
+				font-weight: 300;
+				line-height: 1.3;
+			}
+
+			.details{
+				margin-top: 38px;
+				padding-right: 12px;
+				text-align: right;
+
+				a{
+					display: inline-block;
+					color: $main_color;
+					font-size: $slide_details_link_font_size;
+					position: relative;
+
+					&::before{
+						content: "";
+						width: 5px;
+						height: 9px;
+						background-image: url("../img/details_link_arrow.svg");
+						background-repeat: no-repeat;
+						background-size: contain;
+						position: absolute;
+						top: 50%;
+						left: -13px;
+						@include prefixed(transform, translateY(-50%));
+					}
+				}
+			}
+		}
+
+		.image{
+			margin-top: 85px;
+			position: relative;
+			
+			img{
+				display: block;
+				width: 100%;
+				height: 100%;
+				margin: auto;
+				object-fit: cover;
+			}
+		}
+	}
+
+	.hexagon{
+		width: 100px;
+		height: 120px;
+		position: absolute;
+		left: 50%;
+		bottom: 10px;
+		z-index: 10;
+		@include prefixed(transform, translateX(-50%));
+
+		.content{
+			background: $slider_hexagon_bg_color;
+
+			&::before{
+				content: "";
+				width: 2px;
+				height: 95px;
+				background-image: url("../img/divider.svg");
+				background-repeat: no-repeat;
+				background-size: contain;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				@include prefixed(transform, translate(-50%, -50%));
+			}
+
+			button.slider-button{
+				width: 16px;
+				height: 25px;
+				background-image: url("../img/slider_arrows.svg");
+				background-repeat: no-repeat;
+				background-size: cover;
+				position: absolute;
+				top: 50%;
+				@include prefixed(transform, translateY(-50%));
+
+				&.button-prev{
+					left: 17px;
+				}
+
+				&.button-next{
+					background-position: 100% 0;
+					right: 17px;
+				}
+			}
+		}
+	}
+}

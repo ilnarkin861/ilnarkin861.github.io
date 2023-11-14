@@ -1,0 +1,132 @@
+#process{
+    padding: 212px 30px 100px;
+    background-image: url($how_it_work_bg_image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+
+    .container{
+        max-width: 1200px;
+        margin: 60px auto 0;
+
+        @media (min-width: 768px){
+            @include flexbox();          
+        }
+
+        @media (max-width: 991px) and (min-width: 768px){
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+
+            .column{
+                width: 50%!important;
+
+                &.right{
+                    margin: auto;
+                }
+            }
+        }
+
+        @media (min-width: 1200px){
+            .column{
+                &.left,
+                &.right{
+                    &::before{
+                        content: "";
+                        width: 20px;
+                        height: 127px;
+                        background-image: url($divider_image);
+                        background-repeat: no-repeat;
+                        background-size: cover;
+                        position: absolute;
+                        top: 0;
+                    }
+                }
+
+                &.left{
+                    &::before{
+                        right: 6px;
+                    }
+                }
+
+                &.middle{
+                    padding-left: 38px;
+                }
+
+                &.right{
+                    @include flexbox();
+                    @include justifyEnd();
+
+                    &::before{
+                        left: -10px;
+                    }
+                }
+
+                .item{
+                    @include flexbox();
+
+                    .content{
+                        margin-left: 24px;
+                    }
+                }
+            }   
+        }
+
+        .column{
+            width: 100%;
+            position: relative;
+
+            .item{
+                padding-top: 10px;
+                margin-bottom: 50px;
+                
+                @media (max-width: 1199px){
+                    text-align: center;
+                    
+                    .icon,
+                    .content{
+                        margin: auto;
+                    } 
+                }
+
+                .icon{
+                    width: 72px;
+                    height: 72px;
+                    margin-bottom: 15px;
+                    background: transparent;
+                    border: 3px solid $color_white;
+                    border-radius: 50%;
+                    position: relative;
+
+                    img{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        @include prefix(transform, $translate_xy);
+                    }
+                }
+
+                .content{
+                    max-width: 222px;
+
+                    @media (max-width: 991px){
+                        max-width: 300px;
+                    }
+
+                    .title h6{
+                        color: $main_color;
+                        font-size: $how_it_work_item_title_font_size;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                    }
+
+                    .text{
+                        color: $color_white;
+                        margin-top: 10px;
+                        font-weight: 300;
+                        line-height: 1.5;
+                    }
+                }
+            }
+        }
+    }
+}

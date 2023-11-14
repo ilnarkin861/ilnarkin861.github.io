@@ -1,0 +1,26 @@
+- var email = "ilnarkino@yandex.ru"
+
+- 
+	var social = [
+		{
+			profile: "https://vk.com/ilnar86",
+			icon: "img/social/vk.svg"
+		},
+
+		{
+			profile: "https://github.com/ilnarkin861",
+			icon: "img/social/github.svg"
+		},
+	]
+
+
+//Footer    
+footer
+	.social
+		ul
+			each data in social
+				li
+					a(href=data.profile, target="_blank" rel="nofollow")
+						img(src=data.icon, alt="")
+	.email ilnarkino@yandex.ru
+//Footer end

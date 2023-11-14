@@ -1,0 +1,67 @@
+#menu{
+    width: 450px;
+    height: 100%;
+    padding: 40px 30px;
+    background: $color_white;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 1000;
+    @include box-shadow($menu_shadow);
+    @include transition($transition_all);
+
+    *{
+        color: $main_color;
+    }
+
+    &.visible{
+        left: 0;
+    }
+
+    .logo a{
+        font-size: $menu_logo_font_size;
+    }
+
+    .close-button{
+        font-size: $menu_close_button_font_size;
+    }
+
+    .links{
+        margin-top: 100px;
+
+        ul li{
+            margin-bottom: 10px;
+
+            a{
+                display: inline-block;
+                font-family: $poppins_font;
+                font-size: 18px;
+                overflow: hidden;
+                position: relative;
+
+                &::after{
+                    content: "";
+                    width: 100%;
+                    height: 1px;
+                    background: $main_color;
+                    position: absolute;
+                    bottom: 0;
+                    left: -100%;
+                    @include transition($transition_all);
+                }
+
+                &.active,
+                &:hover{
+                    &::after{
+                        left: 0;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (max-width: 500px){
+        width: 300px;
+    }
+}

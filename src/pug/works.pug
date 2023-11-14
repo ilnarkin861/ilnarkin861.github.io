@@ -1,0 +1,260 @@
+- var bg = ""
+
+- 
+	var webDesignProjects = [
+		{
+			title: "Аренда кранов",
+			images: [
+				{
+					url: "examples/web-design/crane-rent/desktop.jpg",
+					caption: "Размер под домашние компьютеры"
+				},
+
+				{
+					url: "examples/web-design/crane-rent/tablet.jpg",
+					caption: "Размер под планшеты"
+				},
+
+				{
+					url: "examples/web-design/crane-rent/phone.jpg",
+					caption: "Размер под телефоны"
+				},	
+			]
+		},
+
+		{
+			title: "Портфолио разработчика",
+			images: [
+				{
+					url: "examples/web-design/portfolio/about.jpg",
+					caption: "Главная страница"
+				},
+
+				{
+					url: "examples/web-design/portfolio/skills.jpg",
+					caption: "Страница с навыками"
+				},
+
+				{
+					url: "examples/web-design/portfolio/works.jpg",
+					caption: "Страница с примерами работ"
+				},	
+			]
+		},
+
+		{
+			title: "Услуги переезда",
+			images: [
+				{
+					url: "examples/web-design/moving/desktop.jpg",
+					caption: "Размер под домашние компьютеры"
+				},
+
+				{
+					url: "examples/web-design/moving/tablet.jpg",
+					caption: "Размер под планшеты"
+				},
+
+				{
+					url: "examples/web-design/moving/phone.jpg",
+					caption: "Размер под телефоны"
+				},	
+			]
+		},
+
+		{
+			title: "Интернет провайдер",
+			images: [
+				{
+					url: "examples/web-design/omega/desktop.jpg",
+					caption: "Размер под домашние компьютеры"
+				},
+
+				{
+					url: "examples/web-design/omega/tablet.jpg",
+					caption: "Размер под планшеты"
+				},
+
+				{
+					url: "examples/web-design/omega/phone.jpg",
+					caption: "Размер под телефоны"
+				},	
+			]
+		},
+	]
+
+-	
+	var layoutsProjects = [
+		{
+			title: "Brandaloka",
+			image: "img/projects/templates/brandaloka.jpg",
+			viewLink: "examples/templates/brandaloka/index.html",
+			psdLink: "https://www.behance.net/gallery/14493795/BrandaLoka-Creative-Onepage-PSD-Template",
+			gitHubLink: "https://github.com/ilnarkin861/brandaloka_html"
+		},
+
+		{
+			title: "Hexagon",
+			image: "img/projects/templates/hexagon.jpg",
+			viewLink: "examples/templates/hexagon/index.html",
+			psdLink: "https://disk.yandex.ru/i/fNcmyf3SsfNuLg",
+			gitHubLink: "https://github.com/ilnarkin861/hexagon_html"
+		},
+
+		{
+			title: "Creative portfolio",
+			image: "img/projects/templates/creative.jpg",
+			viewLink: "examples/templates/creative/index.html",
+			psdLink: "https://psdfreebies.com/psd/multipurpose-portfolio-website-template-free-psd/",
+			gitHubLink: "https://github.com/ilnarkin861/creative_html_template"
+		},
+
+		{
+			title: "Farmfield",
+			image: "img/projects/templates/farmfield.jpg",
+			viewLink: "examples/templates/farmfiled/index.html",
+			psdLink: "https://html.design/download/green-farming-psd-template/",
+			gitHubLink: "https://github.com/ilnarkin861/farmfield_html"
+		},
+
+		{
+			title: "Hexal",
+			image: "img/projects/templates/hexal.jpg",
+			viewLink: "examples/templates/hexal/index.html",
+			psdLink: "https://freebiesbug.com/psd-freebies/hexal-psd-portfolio-template/",
+			gitHubLink: "https://github.com/ilnarkin861/hexal_html"
+		},
+
+		{
+			title: "Pentart",
+			image: "img/projects/templates/pentart.jpg",
+			viewLink: "examples/templates/pentart/index.html",
+			psdLink: "https://html.design/download/painting-art-gallery-psd-template/",
+			gitHubLink: "https://github.com/ilnarkin861/pentart_html"
+		},
+
+		{
+			title: "Peart",
+			image: "img/projects/templates/peart.jpg",
+			viewLink: "examples/templates/peart/index.html",
+			psdLink: "https://html.design/download/peart-painting-psd-template/",
+			gitHubLink: "https://github.com/ilnarkin861/peart_html"
+		},
+
+		{
+			title: "Universal",
+			image: "img/projects/templates/universal.jpg",
+			viewLink: "examples/templates/universal/index.html",
+			psdLink: "https://disk.yandex.ru/i/jseZdc4aj6X3ww",
+			gitHubLink: "https://github.com/ilnarkin861/universal_html"
+		},
+
+		{
+			title: "Mike portfolio",
+			image: "img/projects/templates/mike.jpg",
+			viewLink: "examples/templates/mike/index.html",
+			psdLink: "https://freebiesupply.com/free-psd-websites/personal-website-template-by-mike-taylor/",
+			gitHubLink: "https://github.com/ilnarkin861/mike_html"
+		},
+	]
+
+
+//Works
+section#works
+	.container
+		+showSectionTitle("Мои работы")
+		.wrapper
+
+			//Web design projects group
+			.projects-group
+				.row
+					.col-md-2
+						.projects-group-title.text-left.text-md-right.text-uppercase
+							h6 Web-дизайн
+					.col-md-10
+						.projects.web-design
+							.description
+								p.
+									Дизайн-концепты, прототипы сайтов.
+							.row.m-md-0
+								each project, pi in webDesignProjects
+
+									//Project
+									.col-lg-6.wow.fadeIn(data-wow-delay=(pi+1)*100 + "ms")
+										.project
+											.browser
+												.top.d-flex.justify-content-between.align-items-center
+													.buttons
+														ul
+															li
+															li
+															li 
+													.address-bar
+														each image, ii in project.images
+															if ii == 0
+																- bg = image.url
+												.content(style="background-image: url('"+bg+"')")
+													.overlay
+														.title.text-center
+															h6 #{project.title}
+															each image, ii in project.images
+																if ii == 0
+																	a.zoom(
+																		href=image.url,
+																		data-fancybox="gallery-"+pi+"",
+																		data-caption=""+image.caption+" <br> (для увеличения изображения нажмите соответствующую кнопку вверху справа)"
+																		)
+															div(style="display: none")
+																each image, ii in project.images
+																	if ii != 0
+																		a(
+																			href=image.url,
+																			data-fancybox="gallery-"+pi+"",
+																			data-caption=""+image.caption+" <br> (для увеличения изображения нажмите соответствующую кнопку вверху справа)"
+																			)
+									//Project end
+			//Web design projects group end
+
+			//Layouts projects group
+			.projects-group
+				.row
+					.col-md-2
+						.projects-group-title.text-left.text-md-right.text-uppercase
+							h6 Верстка
+					.col-md-10
+						.projects.layouts
+							.description
+								p.
+									Примеры шаблонов, сверстанных из открытых PSD источников. Есть возможность посмотреть 
+									шаблон полноэкранном режиме, нажав на соответствующую кнопку. 
+									Также имеются ссылки на файлы источники и на репозиторию проекта на GitHub.
+							.row.m-md-0
+								each project, pi in layoutsProjects
+
+									//Project
+									.col-lg-4.col-sm-6.wow.fadeIn(data-wow-delay=(pi+1)*100 + "ms")
+										.project
+											.image(style="background-image: url("+project.image+")")
+												.overlay
+													.title.text-center
+														h6 #{project.title}
+											.bottom
+												.links.text-center
+													ul
+														li
+															a.hint.template-link(href=project.viewLink title='Посмотреть шаблон')
+																img(src='img/view.svg' alt='')
+														li
+															a.hint(href=project.psdLink rel='nofollow' target='_blank' title='Ссылка на PSD файл')
+																img(src='img/ps.svg' alt='')
+														li
+															a.hint(href=project.gitHubLink target='_blank' title='Перейти на Github')
+																img(src='img/github.svg' alt='')
+									//Project end
+				//Layouts projects group end
+//Works end
+
+								
+				
+
+

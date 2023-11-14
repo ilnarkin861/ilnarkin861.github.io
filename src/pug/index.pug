@@ -1,0 +1,63 @@
+include mixins
+
+- 
+	var styles = [
+		"https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700;800&display=swap",
+		"https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap",
+		"css/components/bootstrap/bootstrap.min.css",
+		"css/components/jquery-ui/jquery-ui.css",
+		"css/components/animate/animate.min.css",
+		"css/components/fancybox/fancybox.css",
+		"css/style.css"]
+
+- 
+	var scripts = [
+		"js/components/jquery/jquery-2.2.0.min.js",
+		"js/components/jquery-ui/jquery-ui.js",
+		"js/components/fancybox/fancybox.umd.js",
+		"js/components/wow/wow.min.js",
+		"js/scripts.js"]
+
+
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="robots" content="noindex, nofollow")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		title Портфолио Ильнара Гафурова
+		link(rel="icon", type="image/x-icon", href="./favicon.ico")
+		each style in styles
+			link(rel="stylesheet" href=style)
+	body
+
+		include header
+		include about
+		include services
+		include skills
+		include works
+		include footer
+		include template-loader
+
+		each script in scripts
+			script(src=script)
+
+		// Yandex.Metrika counter
+		script. 
+			(function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+			m[i].l=1*new Date();
+			for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+			k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+			(window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+			ym(95559401, "init", {
+					clickmap:true,
+					trackLinks:true,
+					accurateTrackBounce:true,
+					webvisor:true
+			});
+		noscript
+			div
+				img(src="https://mc.yandex.ru/watch/95559401", style="position:absolute; left:-9999px;" alt="")
+		// Yandex.Metrika counter

@@ -1,0 +1,90 @@
+#main-slider{
+    margin-top: 75px;
+    position: relative;
+
+    .slide{
+        min-height: 913px;
+        padding-top: 112px;
+        background-repeat: no-repeat;
+        background-size: cover;
+        @include transition($transition_all);
+
+        .slide-title{
+            margin-top: 228px;
+            color: $color_white;
+
+            *{
+                font-size: $slide_title_font_size;
+                line-height: 1;
+                @include transition($transition_all);
+
+                @media (max-width: 768px){
+                    font-size: $slide_title_font_size_sm;
+                }
+            }
+        }
+
+        .buttons{
+            margin-top: 52px;
+            font-size: 0;
+
+            button{
+                width: 204px;
+                height: 68px;
+                margin-right: 13px;
+                margin-bottom: 15px;
+                padding: 0;
+                font-size: $default_font_size;
+                @include transition($transition_bg_color);
+
+                &.first{
+                    color: $main_color;
+                    background: $secondary_yellow;
+
+                    &:hover{
+                        background: $color_white;
+                    }
+                }
+
+                &.second{
+                    color: $slide_second_button_color;
+                    background: $color_white;
+
+                    &:hover{
+                        background: $secondary_yellow;
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 992px){
+            padding-left: 79px;
+        }
+    }
+
+    .slider-buttons{
+        button{
+            background-color: $secondary_yellow;
+
+            &:hover{
+                background-color: $color_white;
+            }
+        }
+
+        @media (min-width: 992px){
+            left: -36px;
+            top: 50%;
+            @include translate($translate_y);
+        }
+
+        @media (max-width: 991px){
+            width: 100%;
+            text-align: right;
+            bottom: 36px;
+        }
+    }
+
+    @media (max-width: 992px){
+        margin-top: -30px;
+    }
+}

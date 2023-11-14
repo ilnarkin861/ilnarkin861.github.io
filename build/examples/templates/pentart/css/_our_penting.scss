@@ -1,0 +1,88 @@
+#our-penting{
+    .left{
+        background: $default_bg_color;
+        @include corners(-48.2deg, $color_white 372.7px, $default_bg_color 373.7px);
+
+        .content-wrapper{
+            padding-top: 136px;
+            padding-bottom: 150px;
+
+            .pentart-title{
+                margin-bottom: 80px;
+            }
+
+            .button{
+                margin-top: 100px;
+            }
+        }
+        
+        @media (max-width: 1199px){
+            background: $default_bg_color;
+        }
+    }
+
+    .right{
+        padding-bottom: 66px;
+        background: $color_white;
+        @include corners(131.7deg, $default_bg_color 292px, $color_white 293px);
+
+        .slider-container{
+            width: 56.46%;
+            margin-top: 148px;
+
+            .slider{
+                .image{
+                    width: 100%;
+                    max-width: 542px;
+                    max-height: 692px;
+                    position: relative;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        object-position: center center;
+                    }
+                }
+
+                @media (max-width: 1400px){
+                    margin-right: 30px;
+                }
+            }
+
+            .slider-buttons{
+                margin-top: 35px;
+                font-size: 0;
+                text-align: center;
+
+                button{
+                    width: 58px;
+                    height: 58px;
+                    margin-right: 16px;
+                    background-color: $main_blue;
+                    border-radius: 50%;
+                    @include transition($transition_bg_color);
+
+                    &:hover{
+                        background-color: $primary_orange;
+                    }
+                }
+            }
+
+            @media (min-width: 1400px){
+                margin-right: 92px;
+            }
+
+            @media (max-width: 1199px) and (min-width: 992px){
+                width: 100%;
+                margin-right: auto;
+                margin-left: auto;
+            }
+
+            @media (max-width: 990px){
+                width: 100%;
+                max-width: 542px;
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+#services{
+	margin-top: 150px;
+	overflow: hidden;
+
+	.service{
+		margin-bottom: 60px;
+
+		.icon{
+			width: 100%;
+			max-width: 95px;
+			height: 70px;
+			margin: auto;
+			overflow: hidden;
+		}
+
+		.content{
+			margin-top: 20px;
+
+			.title{
+				color: $service_title_color;
+				font-size: $service_title_font_size;
+				font-weight: 700;
+			}
+
+			.description{
+				width: 80%;
+				margin: 5px auto 0;
+				opacity: 0.8;
+				font-size: $service_description_font_size;
+
+				*{
+					line-height: 1.3;
+				}
+			}
+		}
+	}
+}

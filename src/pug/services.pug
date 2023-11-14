@@ -1,0 +1,45 @@
+- var delay = 500
+
+- 
+	var servicesList = [
+		{
+			picture: "img/services/design.svg",
+			title: "Web-дизайн",
+			description: "Создание уникального дизайна для будущего сайта"
+		},
+		{
+			picture: "img/services/layout.svg",
+			title: "Верстка",
+			description: "Кроссбраузерная, адаптивная и pixel perfect верстка макета"
+		},
+		{
+			picture: "img/services/spa.svg",
+			title: "SPA",
+			description: "Разработка клиентских одностраничных web-приложений (single page applications) на Angular"
+		},
+		{
+			picture: "img/services/server.svg",
+			title: "Web-Api",
+			description: "Разработка серверных web-приложений на C#"
+		},
+	]
+
+//Services
+section#services
+	.container
+		+showSectionTitle("Направления")
+		.row
+			each service in servicesList
+				//Service item
+				.col-lg-3.col-sm-6.wow.fadeIn(data-wow-delay=delay + 'ms')
+					.service.text-center
+						.icon
+							img(src=service.picture alt=service.title)
+						.content
+							.title
+								h6 #{service.title}
+							.description
+								p #{service.description}
+				- delay = delay + 200
+				//Service item end
+//Services end

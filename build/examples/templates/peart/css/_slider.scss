@@ -1,0 +1,196 @@
+#slider{
+    margin-top: 0!important;
+    padding-top: 46px;
+    position: relative;
+
+    .slider-container{
+        position: relative;
+
+        @media (max-width: 1600px){
+            padding-bottom: 150px;
+        }
+
+        .slide{
+
+            .slide-info{
+                font-family: $great_vibes_font;
+                padding-top: 230px;
+
+                *{
+                    @media (max-width: 992px){
+                        margin-left: 0;
+                    }
+                }
+
+                @media (max-width: 1600px){
+                    padding-top: 70px;
+                }
+
+                .title{
+                    margin-left: 44px;
+
+                    * {
+                        font-size: 110px;
+                        line-height: 1;
+
+                        @media (max-width: 400px){
+                            font-size: 40px;
+                        }
+
+                        @media (max-width: 768px){
+                            font-size: 70px;
+                        }
+                    }
+                }
+
+                .subtitle{
+                    margin-left: 32px;
+
+                    * {
+                        color: $main_red;
+                        font-size: 109px;
+                        line-height: 1;
+
+                        @media (max-width: 400px){
+                            font-size: 30px;
+                        }
+
+                        @media (max-width: 768px){
+                            font-size: 70px;
+                        }
+                    }
+                }
+
+                .slide_number{
+                    margin-left: 14px;
+
+                    * {
+                        font-size: 123px;
+                        line-height: 0.8;
+
+                        @media (max-width: 400px){
+                            font-size: 30px;
+                        }
+
+                        @media (max-width: 768px){
+                            font-size: 70px;
+                        }
+                    }
+                }
+
+                .details-link{
+                    margin-top: 62px;
+                    margin-left: 14px;
+                }
+            }
+
+            .image{
+                max-width: 780px;
+                max-height: 528px;
+                margin-top: 126px;
+                margin-left: 136px;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+        }
+
+        .slider-arrows{
+            position: absolute;
+            bottom: 142px;
+            right: 416px;
+            font-size: 0;
+            z-index: 5;
+
+            @media (max-width: 1600px){
+                width: 100%;
+                text-align: center;
+                bottom: 0;
+                left: 50%;
+                @include translate($translate_x)
+            }
+
+            @media (max-width: 1919px) and (min-width: 1601px){
+                bottom: 70px;
+            }
+
+            button{
+                color: $color_white;
+                font-size: 70px;
+                @include transition($transition_color);
+
+                &.disabled{
+                    opacity: 0.4;
+                    cursor: default;
+
+                    &:hover{
+                        color: $color_white;
+
+                        @media (max-width: 1600px){
+                            color: $main_red;
+                        }
+                    }
+                }
+
+                &:hover{
+                    color: $main_red;
+                }
+
+                @media (max-width: 1600px){
+                    color: $main_red;
+                }
+            }
+        }
+    }
+
+    .slide-numbers{
+        display: none;
+        width: 20px;
+        max-height: 432px;
+        position: absolute;
+        top: 212px;
+        right: 84px;
+        z-index: 5;
+
+        &.visible{
+            display: block!important;
+        }
+
+        @media (max-width: 768px){
+            right: 10px;
+        }
+
+        @media (max-width: 1600px){
+            top: 100px;
+        }
+
+        @media (max-width: 1800px) and (min-width: 768px){
+            right: 40px;
+        }
+
+        .current-slide-number,
+        .total-slides{
+            font-family: $poppins_font;
+            font-weight: bold;
+        }
+
+        .current-slide-number{
+            color: $main_red;
+        }
+
+        .vertical-divider{
+            width: 1px;
+            height: 358px;
+            margin: 20px auto 15px;
+            background-color: #ff0000;
+            opacity: 0.3;
+        }
+
+        .total-slides{
+            color: $black_secondary;
+        }
+    }
+}

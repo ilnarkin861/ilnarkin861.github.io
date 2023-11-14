@@ -1,0 +1,210 @@
+#portfolio{
+    min-height: 1192px;
+    padding-bottom: 108px;
+    background-color: $color_white;
+    background-image: url($portfolio_bg_image);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+
+    .portfolio-items{
+        min-height: 1200px;
+        position: relative;
+
+        img{
+            width: 100%;
+            height: 100%;
+            -o-object-fit: cover;
+            object-fit: cover;
+        }
+
+        .big-image img{
+            -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 41%, 50% 100%, 0% 41%);
+            clip-path: polygon(0% 0%, 100% 0%, 100% 41%, 50% 100%, 0% 41%);
+        }
+
+        .container{
+            width: 100%;
+            max-width: 1198px;
+            min-height: 526px;
+            margin: auto;
+
+            @media (min-width: 1200px){
+                @include flexbox();
+                @include justifyBetween();
+                position: absolute;
+                left: 50%;
+                bottom: 13px;
+                @include prefix(transform, $translate_x);
+
+                .rhomb.white{
+                    position: absolute!important;
+                    top: -114px;
+                    left: 50%;
+                    z-index: 5;
+                    @include prefix(transform, $translate_x);
+
+                    &::before{
+                        @include prefix(transform, rotate(45deg) scale(0.71));
+                    }
+
+                    .content{
+                        padding: 178px 136px 132px;
+                    }
+
+                    .number{
+                        width: 269px;
+                        height: 269px;
+                        position: absolute!important;
+                        top: -93px;
+                        left: -96px;
+
+                        &::before{
+                            content: "";
+                            width: 100%;
+                            height: 100%;
+                            background: rgba(0, 0, 0, 0.5);
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            @include prefix(transform, rotate(45deg) scale(0.71));
+                        }
+
+                        span{
+                            position: absolute;
+                            top: 50%;
+                            left: 50%;
+                            @include prefix(transform, $translate_xy);
+                        }
+                    }
+                }
+            }
+
+            @media (max-width: 1199px){
+                margin-top: -200px;
+                padding: 0 $default_block_padding;
+
+                .rhomb{
+                    margin: 0 auto 50px;
+
+                    &.white{
+                        padding: 20px $default_block_padding 60px;
+
+                        .number{
+                            margin-bottom: 20px;
+                        }
+                    }
+                }    
+            }
+
+            .rhomb{
+                width: 100%;
+                max-width: 526px;
+                max-height: 526px;
+
+                .image-wrapper{
+                    overflow: hidden;
+                    @include prefix(transform, rotate(45deg) scale(0.71));
+                }
+
+                img{
+                    @include prefix(transform, rotate(-45deg) scale(1.43));
+                }
+
+                &.white{
+                    max-width: 533px;
+                    max-height: 533px;
+                    position: relative;
+
+                    &::before{
+                        content: "";
+                        width: 100%;
+                        height: 100%;
+                        background: $color_white;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        @include prefix(box-shadow, $portfolio_white_rhomb_shadow);   
+                    }
+
+                    .content{
+                        position: relative;
+                        text-align: center;
+
+                        .title h2{
+                            color: $main_color;
+                            font-size: 41px;
+                            font-weight: 900;
+                            text-transform: uppercase;
+
+                            @media (max-width: 400px){
+                                font-size: 36px;     
+                            }
+                        }
+
+                        .text{
+                            margin-top: 10px;
+                            color: $color_black;
+                            line-height: 1.3;
+                        }
+
+                        .button{
+                            margin-top: 50px;
+
+                            a{
+                                padding: 9px 18px 8px;
+                                color: $color_white;
+                                background: $main_color;
+                                border: 1px solid transparent;
+                                border-radius: 20px;
+                                font-size: 15px;
+                                font-weight: 700;
+                                text-transform: uppercase;
+                                @include prefix(transition, $transition_all);
+
+                                &:hover{
+                                    background: $color_white;
+                                    color: $main_color;
+                                    border: 1px solid $main_color;
+                                }
+                            }
+                        }
+                    }
+
+                    .number{
+                        margin: 0 auto 20px;
+                        position: relative;
+                        text-align: center;
+
+                        span{
+                            color: $main_color;
+                            font-size: 82px;
+                            font-weight: 900;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .description{
+        max-width: 812px;
+        margin: 26px auto 0;
+        padding: 0 22px;
+        color: $color_white;
+        text-align: center;
+
+        .title h5{
+            font-size: 17px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .text{
+            margin-top: 25px;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+    }
+}
