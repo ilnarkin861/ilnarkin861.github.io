@@ -1,0 +1,18 @@
+@mixin translate($params){
+    -webkit-transform: $params;
+    -ms-transform: $params;
+    transform: $params;
+}
+
+@mixin transition($params){
+    -webkit-transition: $params;
+    -o-transition: $params;
+    transition: $params;
+}
+
+@mixin gradient(){
+    background: rgb(247,68,110);
+    background: -moz-linear-gradient(83deg, rgba(247,68,110,1) 0%, rgba(247,127,55,1) 100%);
+    background: -webkit-linear-gradient(83deg, rgba(247,68,110,1) 0%, rgba(247,127,55,1) 100%);
+    background: linear-gradient(83deg, rgba(247,68,110,1) 0%, rgba(247,127,55,1) 100%);
+}

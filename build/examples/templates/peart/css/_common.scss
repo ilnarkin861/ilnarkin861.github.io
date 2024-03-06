@@ -1,0 +1,61 @@
+body{
+    min-width: 320px;
+    background-image: url("../img/body_bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top center;
+    font-size: $default_font_size;
+    font-weight: 400;
+    position: relative;
+
+    &.overflow{
+        overflow: hidden;
+    }
+}
+
+a{
+    text-decoration: none!important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    margin-bottom: 0;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+button{
+    padding: 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+button,
+button:focus,
+a button,
+a button:focus{
+    outline: none;
+    box-shadow: none!important;
+}
+
+textarea:focus,
+input:focus,
+select:focus{
+    outline: none;
+}
+
+ul{
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li{
+        list-style: none;
+    }
+}

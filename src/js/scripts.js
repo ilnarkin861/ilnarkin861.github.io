@@ -1,0 +1,92 @@
+$(document).ready(function(){
+	
+	$(window).load(function(){ 
+		progressOfSkills();
+	});
+
+	$(window).scroll(function(){ 
+		progressOfSkills();
+	});	
+	
+	$('#works .projects.layouts .project .template-link').on('click', function(e){
+		e.preventDefault();
+		let templateLoader = $('#template-loader');
+		let templateUrl = $(this).attr('href');
+		templateLoader.toggleClass('visible');
+		$('body').toggleClass('fixed');
+		templateLoader.find('.template-area').html('<iframe src="' +templateUrl+ '">');
+
+		if($(window).width() >= 1200){
+			templateLoader.find('.device-buttons').find('#desktop-button').addClass('active');
+		}
+	});
+
+	$('#template-loader .header button#template-loader-close').on('click', function(){
+		let templateLoader = $(this).parents('#template-loader');
+		templateLoader.toggleClass('visible');
+		templateLoader.find('.device-buttons').find('button').removeClass('active');
+		templateLoader.find('iframe').css('width', '100%');
+		$('body').toggleClass('fixed');
+	});
+
+	$('#template-loader .header .device-buttons button').on('click', function(){
+		let templateLoader = $(this).parents('#template-loader');
+		let width = $(this).data('width');
+		templateLoader.find('.device-buttons').find('button').removeClass('active');
+		$(this).addClass('active');
+		templateLoader.find('iframe').css('width', width);
+	});
+
+	new WOW().init();
+
+	let progressCompleted = false;
+
+	function progressOfSkills(){
+
+		if(!progressCompleted){
+
+			let skillsSection = $('#skills');
+
+			if(skillsSection.offset().top - 200 <= $(window).scrollTop()){
+
+				skillsSection.find('.skill-progress-bar').each(function (){
+					let width = $(this).data('width');
+					$(this).find('.inner').animate({
+						width: width
+					}, 1500)
+				});
+
+				progressCompleted = true;
+			}
+		}
+	}
+});
+
+function showVideo(videoUrl, poster){
+	const videoSection = document.getElementById('video');
+	const video = document.createElement('video');
+	let source = document.createElement('source');
+	videoSection.appendChild(video);
+	video.controls = true;
+	video.autoplay = true;
+	video.poster = poster;
+	source.setAttribute('type', 'video/mp4');
+	source.setAttribute('src', videoUrl);
+	video.appendChild(source);
+	video.style.marginTop = (window.scrollY + 150) +'px'
+	videoSection.classList.remove('hidden');
+	video.addEventListener('click', function (e){
+		e.stopPropagation();
+	});
+}
+
+document.getElementById('video').onclick = function(){
+	this.classList.add('hidden');
+	this.removeChild(this.getElementsByTagName('video')[0]);
+}
+
+document.getElementById('video-close').onclick = function (){
+	let video = document.getElementById('video');
+	video.classList.add('hidden');
+	video.removeChild(video.getElementsByTagName('video')[0]);
+}

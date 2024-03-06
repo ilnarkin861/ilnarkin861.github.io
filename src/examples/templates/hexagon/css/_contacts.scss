@@ -1,0 +1,155 @@
+#contacts{
+	padding-bottom: 12px;
+	background-image: url("../img/map.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	position: relative;
+
+	.triangle{
+		border-left: 44px solid transparent;
+		border-right: 44px solid transparent;
+		border-top: 26px solid $color_white;
+		position: absolute;
+		left: 50%;
+		top: 0;
+		z-index: 5;
+		@include prefixed(transform, translateX(-50%));
+	}
+
+	.overlay{
+		width: 100%;
+		padding-top: 80px;
+		padding-bottom: 38px;
+		background: $contacts_overlay_color;
+		position: relative;
+
+		&::before,
+		&::after{
+			content: "";
+			width: 0;
+			height: 0;
+			position: absolute;
+			top: 0;
+		}
+
+		&::before{
+			border-top: 26px solid $color_white;
+			border-right: 44px solid transparent;
+			left: 0;
+		}
+
+		&::after{
+			border-top: 26px solid $color_white;
+			border-left: 44px solid transparent;
+			right: 0;
+		}
+
+		.section-heading *{
+			color: $color_white;
+		}
+
+		.contact-items{
+			margin-top: 66px;
+			margin-bottom: 72px;
+			position: relative;
+			z-index: 15;
+
+			.item{
+				margin-bottom: 50px;
+				text-align: center;
+
+				*{
+					color: $color_white;
+				}
+
+				.hexagon{
+					width: 100px;
+					height: 120px;
+					margin: auto;
+		
+					.content{
+						border-left: $hexagon_left_right_border_width solid $color_white;
+						border-right: $hexagon_left_right_border_width solid $color_white;
+		
+						&::before,
+						&::after{
+							border-top: $hexagon_top_bottom_border_width solid $color_white;
+							border-bottom: $hexagon_top_bottom_border_width solid $color_white;
+						}
+
+						.icon{
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							@include prefixed(transform, translate(-50%, -50%));
+						}
+					}
+				}
+
+				.info{
+					margin-top: 22px;
+
+					.title{
+						text-transform: uppercase;
+
+						*{
+							font-size: $contact_font_size;
+						}
+					}
+
+					.contact{
+						font-family: $raleway_heavy_font;
+						line-height: 1;
+					}
+				}
+			}
+		}
+	}
+
+	.hexagon.details{
+		width: 146px;
+		height: 174px;
+		margin: auto;
+		position: relative;
+		z-index: 15;
+
+		.content{
+			background: $color_white;
+
+			.map-link{
+				color: $main_color;
+				font-family: $raleway_heavy_font;
+				text-align: center;
+				line-height: 1;
+				text-transform: uppercase;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				@include prefixed(transform, translate(-50%, -50%));
+			}
+		}
+	}
+
+	@media (min-width: 992px){
+		&::before,
+		&::after{
+			content: "";
+			width: 50%;
+			height: 346px;
+			background: transparent;
+			position: absolute;
+			bottom: 12px;
+			z-index: 5;
+		}
+
+		&::before{
+			background: linear-gradient(to left bottom, transparent 50%, $color_white 50.1%);
+			left: 0;
+		}
+
+		&::after{
+			background: linear-gradient(to right bottom, transparent 50%, $color_white 50.1%);
+			right: 0;
+		}     
+	}
+}

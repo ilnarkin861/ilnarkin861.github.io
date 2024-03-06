@@ -1,0 +1,101 @@
+header{
+	width: 100%;
+	padding-top: 20px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 50;
+
+	.hexagon{
+		width: 100px;
+		height: 120px;
+
+		.logo{
+			line-height: 0.85;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: 10;
+			@include prefixed(transform, translate(-50%, -50%));
+	
+			a{
+				color: $main_color;
+				text-transform: uppercase;
+		
+				&:hover{
+					color: $main_color;
+				}
+				
+				span{
+					font-family: $raleway_heavy_font;
+					font-size: $logo_font_size;
+				}
+			}
+		}
+	}
+
+	.navigation{
+		ul{
+			font-size: 0;
+
+			li{
+				display: inline-block;
+				font-size: $navigation_font_size;
+				text-transform: uppercase;
+				position: relative;
+	
+				&:not(:first-child){
+					margin-left: 40px;
+				}
+	
+				&.active{
+					font-weight: 700;
+
+					a:hover{
+						color: $main_color;
+					}
+	
+					&::before,
+					&::after{
+						content: "";
+						height: 3px;
+						position: absolute;
+						bottom: -9px;
+						@include prefixed(transition, opacity ease-in-out $transition_duration);
+					}
+	
+					&::before{
+						width: calc(100% + 20px);
+						background: $navigation_color;
+						left: 50%;
+						@include prefixed(transform, translateX(-50%));
+					}
+	
+					&::after{
+						width: calc(100% + 10px);
+						background: $main_color;
+						left: 0;
+					}
+				}
+	
+				a{
+					color: $main_color;
+					@include prefixed(transition, color ease-in-out $transition_duration);
+
+					&:hover{
+						color: $navigation_color;
+					}
+				}
+			}
+		}
+
+		button.mobile-menu-button{
+			width: 25px;
+			height: 18px;
+			margin-right: 20px;
+			background-image: url("../img/menu.svg");
+			background-repeat: no-repeat;
+			background-size: contain;
+		}        
+	}    
+}

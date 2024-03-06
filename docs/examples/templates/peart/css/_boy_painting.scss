@@ -1,0 +1,28 @@
+#boy-painting{
+    margin-top: -268px;
+
+    .content{
+        padding-top: 398px;
+        
+        .title{
+            margin-bottom: 24px;
+        }
+
+        .text{
+            margin-bottom: 56px;
+        }
+    }
+
+    .image{
+        max-width: 286px;
+        max-height: 636px;
+        margin-top: 136px;
+        margin-left: 342px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}

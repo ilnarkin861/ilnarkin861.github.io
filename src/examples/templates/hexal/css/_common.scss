@@ -1,0 +1,19 @@
+body{
+	min-width: 320px;
+	color: $main_text_color;
+	background: $color_white;
+	font-family: $primary_font;
+	font-size: $default_font_size;
+	font-weight: 400;
+}
+
+header,
+section,
+footer{
+	.container{
+		width: 100%;
+		max-width: 1020px;
+		margin: auto;
+		padding: 0 20px;
+	}
+}

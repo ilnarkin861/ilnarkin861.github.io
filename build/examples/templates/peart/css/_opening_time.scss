@@ -1,0 +1,80 @@
+#opening-time{
+    margin-top: -258px;
+
+    .content{
+        padding-top: 405px;
+        padding-right: 50px;
+
+        .title{
+            margin-bottom: 24px;
+        }
+
+        .text{
+            margin-bottom: 70px;
+        }
+        
+        @media (max-width: 991px){
+            padding-top: 0!important;
+        }
+    }
+
+    .inner{
+        .visiting-hours{
+            max-width: 375px;
+            max-height: 146px;
+            margin-top: 420px;
+            margin-left: 338px;
+            color: $color_white;
+            font-family: $poppins_font;
+
+            *{
+                font-size: 30px;
+
+                @media (max-width: 500px){
+                    font-size: 24px;
+                }
+            }
+
+            .days{
+                *{
+                    font-size: 40px!important;
+                    line-height: 1.15;
+
+                    @media (max-width: 500px){
+                        font-size: 26px!important;
+                    }
+                }
+            }
+
+            .hours{
+                *{
+                    line-height: 1.53;
+                }
+            }
+
+            .holidays{
+                *{
+                    color: #1f1e1e;
+                }
+            }
+
+            @media (max-width: 1600px){
+                width: 100%;
+                margin: 0!important;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                @include translate($translate_xy);
+            }
+
+            @media (max-width: 500px){
+                height: auto;
+            }
+        }
+
+        @media (max-width: 1300px){
+            @include gradient();
+            border-radius: 50%;
+        }
+    }
+}

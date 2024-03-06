@@ -1,0 +1,40 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    &::after,
+    &::before{
+        box-sizing: border-box;
+    }
+}
+
+a{
+    text-decoration: none!important;
+}
+
+button{
+    background: none;
+    border: none;
+    box-shadow: none;
+    cursor: pointer;
+    
+}
+
+button,
+button:focus,
+a button,
+a button:focus{
+    outline: none;
+    box-shadow: none!important;
+}
+
+textarea:focus,
+input:focus,
+select:focus{
+    outline: none;
+}
+
+ul{
+    list-style: none;
+}

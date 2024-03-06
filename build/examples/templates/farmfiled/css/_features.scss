@@ -1,0 +1,98 @@
+#features{
+    margin-top: -45px;
+
+    .features-wrapper{
+        min-height: 916px;
+        padding-top: 156px;
+        padding-bottom: 124px;
+        background-image: url("../img/features_bg.jpg");
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .section-title{
+            .colorized{
+                color: $secondary_yellow;
+            }
+        }
+
+        .features-items{
+            margin-top: 47px;
+
+            .feature-item{
+                margin-bottom: 70px;
+
+                &:hover{
+                    .info{
+                        background: $feature_item_bg_color_hover;
+
+                        .image svg{
+                            fill: $feature_icon_color_hover;
+                        }
+
+                        .title,
+                        .section-text{
+                            *{
+                                color: $feature_text_color_hover;
+                            }
+                        }
+                    }
+
+                    .button button{
+                        color: $feature_button_color_hover;
+                        background: $feature_button_bg_color_hover;
+                    }
+                }
+
+                .info{
+                    height: 100%;
+                    padding: 65px 20px 72px;
+                    background: $feature_item_bg_color;
+                    @include transition($transition_bg_color);
+
+                    .image{
+                        height: 86px;
+                        margin-bottom: 20px;
+
+                        svg{
+                            fill: $feature_icon_color;
+                            @include transition($transition_all);
+                        }
+                    }
+
+                    .title,
+                    .section-text{
+                        *{
+                            color: $feature_text_color;
+                            @include transition($transition_color);
+                        }
+                    }
+
+                    .title{
+                        margin-bottom: 13px;
+
+                        *{
+                            font-size: $feature_title_font_size;
+                        }
+                    }
+                }
+
+                .button{
+                    margin-top: 29px;
+
+                    button{
+                        width: 145px;
+                        height: 42px;
+                        color: $button_color;
+                        background: $main_color;
+                        font-family: $poppins_font;
+                        @include transition($transition_all);
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 767px){
+            padding-left: 72px;
+        }
+    }
+}

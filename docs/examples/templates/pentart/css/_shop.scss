@@ -1,0 +1,87 @@
+#shop{
+    .left{
+        padding-top: 132px;
+        padding-bottom: 150px;
+        background: $shop_left_bg_color;
+        @include corners(-48.2deg, $color_white 379px, $shop_left_bg_color 380px);
+
+        .pentart-title{
+            margin-bottom: 82px;
+        }
+
+        .default-button{
+            margin-top: 110px;
+        }
+
+        @media (max-width: 1199px){
+            background: $shop_left_bg_color;
+        }
+    }
+
+    .right{
+        padding-top: 350px;
+        padding-bottom: 100px;
+        background: $color_white;
+        @include corners(131.7deg, $shop_left_bg_color 286px, $color_white 287px);
+
+        .images-container{
+            width: 92.71%;
+            max-height: 515px;
+            position: relative;
+
+            .big-image-wrapper{
+                width: 83.71%;
+                height: auto;
+
+                img{
+                    width: 100%;
+                    height: 100%;
+                    object-fit: contain;
+                }
+            }
+
+            .small-image-wrapper{
+                width: 30.11%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+
+                .small-image{
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    bottom: 50px;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: contain;
+                    }
+
+                    @media (max-width: 1199px){
+                        height: 50%;
+                        top: 50%;
+                        @include translate($translate_y);
+                    }
+                }
+            }
+
+            @media (max-width: 1400px) and (min-width: 1200px){
+                margin-top: 100px;
+            }
+
+            @media (min-width: 1200px){
+                margin-right: 50px;
+            }
+
+            @media (max-width: 1199px){
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 991px){
+            padding-top: 150px;
+        }
+    }
+}

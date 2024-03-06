@@ -1,0 +1,41 @@
+#presentation{
+    width: 100%;
+    padding-bottom: 84px;
+    background-color: $color_white;
+    background-image: url($presentation_bg_image);
+    background-repeat: no-repeat;
+    background-position: 0 641px;
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+
+    &::before,
+    &::after{
+        content: "";
+        position: absolute;
+    }
+
+    &::before{
+        width: 23.36%;
+        height: 654px;
+        background-image: url($presentation_left_triangle);
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: 230px;
+        left: 0;        
+    }
+
+    &::after{
+        width: 60.07%;
+        height: 841px;
+        background-image: url($presentation_right_triangle);
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: 100% 0;
+        top: 0;
+        right: 0;
+    }
+
+    @import "banner";
+    @import "about";  
+}

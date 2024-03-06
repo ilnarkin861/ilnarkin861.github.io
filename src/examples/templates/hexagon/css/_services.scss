@@ -1,0 +1,156 @@
+#services{
+	padding-top: 85px;
+	background: $services_section_bg_color;
+	position: relative;
+
+	.services-list{
+		padding-bottom: 100px;
+		position: relative;
+
+		.item{
+			margin-bottom: 45px;
+			text-align: center;
+			position: relative;
+			z-index: 3;
+
+			.hexagon{
+				width: 130px;
+				height: 156px;
+				margin: auto;
+
+				.content .icon{
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					z-index: 10;
+					@include prefixed(transform, translate(-50%, -50%));
+				}
+			}
+
+			.details{
+				margin-top: 20px;
+
+				.title,
+				.description{
+					line-height: 1;
+				}
+
+				.title *{
+					font-family: $raleway_heavy_font;
+					font-size: $service_title_font_size;
+					text-transform: uppercase;
+				}
+
+				.description{
+					font-size: $service_description_font_size;
+					font-weight: 300;
+				}
+			}
+		}
+
+		.image{
+			width: 40%;
+			height: 100%;
+			position: absolute;
+			left: 50%;
+			bottom: 0;
+			@include prefixed(transform, translateX(-50%));
+		
+			img{
+				display: block;
+				width: 100%;
+				height: 100%;
+				object-fit: contain;
+				position: absolute;
+				left: 50%;
+				bottom: 0;
+				@include prefixed(transform, translateX(-50%));
+			}
+		}
+
+		@media (min-width: 1200px){
+			padding-bottom: 248px;            
+		}
+	}
+
+	.triangle{
+		width: 0;
+		height: 0;
+		position: absolute;
+		bottom: 0;
+
+		&.triangle-left{
+			border-bottom: 26px solid $color_white;
+			border-right: 44px solid transparent;
+			left: 0;
+		}
+
+		&.triangle-center{
+			border-left: 44px solid transparent;
+			border-right: 44px solid transparent;
+			border-bottom: 26px solid $color_white;
+			left: 50%;
+			@include prefixed(transform, translateX(-50%));
+		}
+
+		&.triangle-right{
+			border-bottom: 26px solid $color_white;
+			border-left: 44px solid transparent;
+			right: 0;
+		}
+	}
+
+	@media (min-width: 992px){
+		&::before,
+		&::after{
+			content: "";
+			width: 50%;
+			height: 348px;
+			background: transparent;
+			position: absolute;
+			top: -348px;
+		}
+
+		&::before{
+			background: linear-gradient(to left bottom, transparent 50%, $services_section_bg_color 50.1%);
+			left: 0;
+		}
+
+		&::after{
+			background: linear-gradient(to right bottom, transparent 50%, $services_section_bg_color 50.1%);
+			right: 0;
+		}
+
+		.services-list .item{
+			&.indent-left{
+				margin-left: 90px;
+			}
+
+			&.indent-right{
+				margin-right: 90px;
+			}
+
+			.hexagon.line{
+
+				&::before{
+					content: "";
+					width: 1px;
+					height: 420px;
+					background: $main_color;
+					position: absolute;
+					top: -415px;
+					left: 50%;
+					z-index: 5;
+					@include prefixed(transform, translateX(-50%));
+					transform: translateX(-50%);
+				}
+
+				&.last::before{
+					height: 660px;
+					opacity: 0.1;
+					top: -655px;		
+				}
+			}
+		}
+	}
+}

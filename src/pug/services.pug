@@ -1,0 +1,19 @@
+//Services
+section#services
+	.container
+		+showSectionTitle("Направления")
+		.row
+			each service in servicesList
+				//Service item
+				.col-lg-3.col-sm-6.wow.fadeIn(data-wow-delay=delay + 'ms')
+					.service.text-center
+						.icon
+							img(src=service.picture alt=service.title)
+						.content
+							.title
+								h6 #{service.title}
+							.description
+								p #{service.description}
+				- delay = delay + 200
+				//Service item end
+//Services end

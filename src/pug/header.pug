@@ -1,0 +1,17 @@
+//Header
+header
+	.wrapper
+		.overlay
+			.container.wow.fadeIn
+				.picture
+					img(src="img/photo.jpg" alt="Ильнар Гафуров")
+				.info.text-center
+					.name.text-uppercase Ильнар Гафуров
+					.experience Разработчик, веб-дизайнер
+				.social
+					ul
+						each data in social
+							li
+								a(href=data.profile, target="_blank" rel="nofollow")
+									img(src=data.icon, alt="")
+//Header end

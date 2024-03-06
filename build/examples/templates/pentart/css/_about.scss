@@ -1,0 +1,52 @@
+#about{
+    .left{
+        padding-top: 366px;
+        background: $color_white;
+        background: linear-gradient(-131.6deg, $about_right_bg_color 371px, $color_white 372px);
+
+        .image{
+            max-width: 565px;
+            max-height: 509px;
+            position: relative;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
+        @media (max-width: 991px){
+            padding-top: 150px;
+        }
+    }
+
+    .right{
+        padding-bottom: 110px;
+        padding-top: 144px;
+        background: linear-gradient(48.4deg, $color_white 292px, $about_right_bg_color 293px);
+
+        .pentart-title{
+            margin-bottom: 28px;
+        }
+
+        .subtitle{
+            margin-bottom: 70px;
+
+            *{
+                color: $color_white;
+                font-size: $about_subtitle_font_size;
+                font-weight: 700;
+                line-height: 1.13;
+            }
+        }
+
+        .button{
+            margin-top: 108px;
+        }
+
+        @media (max-width: 1199px){
+            background: $about_right_bg_color;
+        }
+    }
+}

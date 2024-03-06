@@ -1,0 +1,88 @@
+#mission{
+    padding: 200px 0 140px;
+
+    .facts{
+        margin-top: 60px;
+
+        .fact-item-container{
+            width: 100%;
+            max-width: 342px;
+            margin: 50px auto 0;
+            position: relative;
+
+            &::before{
+                content: "";
+                display: block;
+                padding-top: 100%;
+            }
+
+            .fact-item{
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                border: 3px solid $main_color;
+                overflow: hidden;
+                @include prefixed(transform, rotate(45deg) scale(0.7));
+                @include prefixed(transition, background-color ease-in-out $transition_duration);
+               
+                &:hover{
+                    background: $main_color;
+
+                    .info{
+                        color: $color_white;
+                    }
+                }
+                
+                .info{
+                    width: 100%;
+                    height: 100%;
+                    color: $main_color;
+                    text-align: center;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    @include prefixed(transform, rotate(-45deg) scale(1.42));
+                    @include prefixed(transition, color ease-in-out $transition_duration);
+
+                    .wrapper{
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        @include prefixed(transform, translate(-50%, -50%));
+
+                        .number,
+                        .text{
+                            line-height: 1;
+                        }
+
+                        .number{
+                            font-size: $fact_number_font_size;
+
+                            @media (max-width: 1199px){
+                                font-size: $fact_number_sm_font_size;
+                            }
+                        }
+
+                        .text{
+                            font-size: $fact_text_font_size;
+
+                            @media (max-width: 1199px){
+                                font-size: $fact_text_sm_font_size;
+                            }
+                        } 
+                    }
+                }
+            }
+
+            @media (max-width: 767px){
+                max-width: 300px;
+            }
+
+            @media (max-width: 575px){
+                max-width: 240px;
+            }
+        }
+    }
+}

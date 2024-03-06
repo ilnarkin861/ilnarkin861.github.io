@@ -1,0 +1,179 @@
+#blog{
+    margin-top: -45px;
+
+    .content-wrapper{
+        -webkit-filter: drop-shadow(0 0 46px rgba(30, 30, 29, 0.97));
+        filter: drop-shadow(0 0 46px rgba(30, 30, 29, 0.97));
+
+        .blog-posts-wrapper{
+            min-height: 916px;
+            padding-top: 128px;
+            padding-bottom: 170px;
+            background: $primary_yellow;
+    
+            .blog-posts-slider-container{
+                margin-top: 55px;
+                position: relative;
+    
+                .blog-posts-slider{
+                    .post-details{
+                        width: 83.63%;
+                        min-height: 512px;
+                        position: relative;
+                    
+                        &::before{
+                            content: "";
+                            width: 100%;
+                            height: 100%;
+                            background: $post_details_bg_color;
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            z-index: -1;
+                            @include clipPath($post_details_clip_path);
+                        }
+    
+                        .actions{
+                            ul li{
+                                &:not(:last-child){
+                                    margin-bottom: 56px;
+                                }
+    
+                                @media screen and (max-width: 768px){
+                                    display: inline-block;
+                                    margin-right: 20px;
+                                    margin-top: 40px;
+                                }
+                            }
+    
+                            *{
+                                color: $post_details_color;
+                            }
+    
+                            .icon{
+                                *{
+                                    font-size: 35px;
+                                }
+                            }
+    
+                            .title{
+                                line-height: 0.5;
+                            }
+    
+                            @media screen and (min-width: 769px){
+                                position: absolute;
+                                top: 106px;
+                                left: 55px;
+                            }
+                        }
+    
+                        .image{
+                            width: 82.23%;
+                            max-height: 315px;
+                            
+                            img{
+                                width: 100%;
+                                height: 100%;
+                                object-fit: contain;
+                            }
+    
+                            @media screen and (min-width: 769px){
+                                position: absolute;
+                                top: 82px;
+                                right: -102px;
+                            }
+    
+                            @media screen and (max-width: 768px){
+                                position: relative;
+                            }
+                        }
+    
+                        @media screen and (max-width: 768px){
+                            width: 100%;
+                            padding-top: 70px;
+                            padding-left: 20px;
+                        }
+                    }
+    
+                    .post-content{
+                        padding-top: 86px;
+    
+                        *{
+                            color: $main_color;
+                        }
+    
+                        .post-title{
+                            margin-bottom: 10px;
+    
+                            *{
+                                font-size: 35px;
+                            }
+                        }
+    
+                        .text{
+                            padding-right: 10px;
+                            font-family: $poppins_font;
+                            line-height: 1.76;
+                        }
+    
+                        .button{
+                            margin-top: 22px;
+    
+                            button{
+                                width: 136px;
+                                height: 43px;
+                                color: $button_color;
+                                background: $main_color;
+                                font-family: $poppins_font;
+                                @include transition($transition_all);
+    
+                                &:hover{
+                                    color: $main_color;
+                                    background: $button_color;
+                                }
+                            }
+                        }
+    
+                        @media screen and (min-width: 992px){
+                            padding-left: 17px;
+                        }
+                    }
+                }
+    
+                .slider-buttons{
+                    button{
+                        background: $color_white;
+    
+                        &:hover{
+                            background: $slider_button_hover_bg_color;
+    
+                            svg{
+                                fill: $color_white;
+                            }                        
+                        }
+    
+                        svg{
+                            fill: $main_color;
+                        }
+                    }
+    
+                    @media screen and (min-width: 1700px){
+                        top: 50%;
+                        left: -146px;
+                        @include translate($translate_y);
+                    }
+    
+                    @media screen and (max-width: 1699px){
+                        width: 100%;
+                        margin-top: 100px;
+                        position: relative;
+                    }
+                }
+            }
+    
+            @media screen and (min-width: 768px){
+                padding-right: 60px;            
+            }
+        }
+    }
+}

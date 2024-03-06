@@ -1,0 +1,10 @@
+//Footer    
+footer
+	.social
+		ul
+			each data in social
+				li
+					a(href=data.profile, target="_blank" rel="nofollow")
+						img(src=data.icon, alt="")
+	.email #{email}
+//Footer end

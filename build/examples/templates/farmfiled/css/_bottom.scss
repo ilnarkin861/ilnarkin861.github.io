@@ -1,0 +1,11 @@
+#bottom{
+    min-height: 72px;
+    color: $copyright_color;
+    font-family: $poppins_font;
+
+    .bottom-wrapper{
+        @media screen and (min-width: 992px) {
+            padding-left: 77px;            
+        }
+    }
+}

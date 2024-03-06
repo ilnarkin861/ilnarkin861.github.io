@@ -1,0 +1,110 @@
+#testimonial{
+    margin-top: -55px;
+
+    .testimonial-wrapper{
+        padding-top: 75px;
+        padding-bottom: 194px;
+        background: $primary_yellow;
+
+        .section-title{
+            *{
+                color: $main_color;
+            }
+        }
+
+        .testimonial-slider-container{
+            margin-top: 48px;
+            position: relative;
+
+            .testimonial-item{
+                padding-bottom: 116px;
+                background: $color_white;
+                position: relative;
+                @include clipPath($testimonial_item_bottom_clip_path);
+
+                .top{
+                    width: 100%;
+                    height: 132px;
+                    padding-left: 30px;
+                    background: $primary_yellow;
+                    position: relative;
+
+                    &::before{
+                        content: "";
+                        width: 100%;
+                        height: 82px;
+                        background: $color_white;
+                        position: absolute;
+                        left: 0;
+                        bottom: -1px;
+                        @include clipPath($testimonial_item_top_clip_path);
+                    }
+
+                    .picture{
+                        width: 123px;
+                        height: 132px;
+                        position: relative;
+                    }
+                }
+
+                .content{
+                    margin-top: 20px;
+                    padding-left: 30px;
+                    padding-right: 18px;
+
+                    .author{
+                        color: $main_color;
+                        font-size: $testimonial_author_font_size;           
+                    }
+    
+                    .career{
+                        color: $primary_yellow;
+                        font-family: $poppins_font;
+                    }
+    
+                    .text{
+                        margin-top: 15px;
+                        color: $main_color;
+                        font-family: $poppins_font;
+                        line-height: 1.7;
+                    }
+                }
+            }
+
+            .slider-buttons{
+                button{
+                    background: $color_white;
+
+                    &:hover{
+                        background: $slider_button_hover_bg_color;
+
+                        svg{
+                            fill: $color_white;
+                        }                        
+                    }
+
+                    svg{
+                        fill: $main_color;
+                    }
+                }
+
+                @media (min-width: 1700px){
+                    top: 50%;
+                    left: -156px;
+                    @include translate($translate_y);
+                }
+
+                @media (max-width: 1699px){
+                    width: 100%;
+                    margin-top: 100px;
+                    padding-left: 15px;
+                    position: relative;
+                }
+            }
+        }
+
+        @media (min-width: 992px){
+            padding-right: 74px;
+        }
+    }
+}
