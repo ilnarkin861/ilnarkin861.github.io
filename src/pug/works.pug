@@ -33,7 +33,7 @@ section#works
 													.overlay
 														.title.text-center
 															h6 #{project.title}
-															button(onclick="showVideo('"+project.video+"', '"+project.poster+"')").zoom
+															button(onclick="ym(96794772,'reachGoal','show_video'); showVideo('"+project.video+"', '"+project.poster+"')").zoom
 									//Project end
 			//Web design projects group end
 
@@ -62,7 +62,7 @@ section#works
 														h6 #{project.title}
 											.bottom
 												.full-view
-													a(href=project.viewLink, onclick="return showTemplate('" +project.viewLink+ "');").template-link Посмотреть шаблон
+													a(href=project.viewLink, onclick="ym(96794772,'reachGoal','show_template'); return showTemplate('" +project.viewLink+ "');").template-link Посмотреть шаблон
 												.links.text-center
 													ul
 														li
