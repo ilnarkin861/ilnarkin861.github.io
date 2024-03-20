@@ -80,7 +80,7 @@ gulp.task('images:prod', function(){
 
 //Js
 gulp.task('js:prod', function(){
-	return gulp.src('./src/js/**/*.js')
+	return gulp.src(['./src/js/**/*.js', '!./src/js/counter.js'])
 		.pipe(changed('./docs/js'))
 		.pipe(plumber(errorsNotify('Js')))
 		.pipe(jsmin())

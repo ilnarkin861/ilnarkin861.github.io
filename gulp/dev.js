@@ -71,7 +71,7 @@ gulp.task('images:dev', function(){
 
 //Js
 gulp.task('js:dev', function(){
-	return gulp.src('./src/js/**/*.js')
+	return gulp.src(['./src/js/**/*.js', '!./src/js/counter.js'])
 		.pipe(changed('./build/js'))
 		.pipe(gulp.dest('./build/js/'));
 });
