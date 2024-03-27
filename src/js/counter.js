@@ -5,8 +5,9 @@
    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
 
    ym(96794772, "init", {
-        clickmap:true,
-        trackLinks:true,
-        accurateTrackBounce:true,
-        webvisor:true
+		childIframe:true,
+		clickmap:true,
+		trackLinks:true,
+		accurateTrackBounce:true,
+		webvisor:true
    });
