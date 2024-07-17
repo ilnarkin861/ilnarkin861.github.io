@@ -1,0 +1,131 @@
+#contacts{
+    margin-top: -48px;
+
+    .content-wrapper{
+        -webkit-filter: drop-shadow(0 0 46px rgba(30, 30, 29, 1));
+        filter: drop-shadow(0 0 46px rgba(30, 30, 29, 1));
+
+        .contacts-wrapper{
+            min-height: 918px;
+            padding-top: 170px;
+            padding-bottom: 185px;
+            position: relative;
+    
+            &::before{
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-image: url(../img/contacts_bg.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                opacity: 0.65;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+    
+            .section-title{
+                .colorized{
+                    color: $primary_yellow;
+                }
+            }
+    
+            .contact-form_map{
+                margin-top: 34px;
+    
+                .contact-form{
+                    form{
+                        input,
+                        textarea{
+                            width: 100%;
+                            max-width: 560px;
+                            height: 62px;
+                            margin-bottom: 26px;
+                            padding-left: 22px;
+                            background: $color_white;
+                            border: none;
+                            font-family: $poppins_font;
+    
+                            &::-webkit-input-placeholder{
+                                color: $contact_form_placeholder_color;
+                                font-size: $contact_form_placeholder_font_size;
+                                font-family: $poppins_font;
+                                text-transform: capitalize;
+                            }
+        
+                            &::-moz-placeholder{
+                                color: $contact_form_placeholder_color;
+                                font-size: $contact_form_placeholder_font_size;
+                                font-family: $poppins_font;
+                                text-transform: capitalize;
+                            }
+        
+                            &:-moz-placeholder{
+                                color: $contact_form_placeholder_color;
+                                font-size: $contact_form_placeholder_font_size;
+                                font-family: $poppins_font;
+                                text-transform: capitalize;
+                            }
+        
+                            &:-ms-input-placeholder{
+                                color: $contact_form_placeholder_color;
+                                font-size: $contact_form_placeholder_font_size;
+                                font-family: $poppins_font;
+                                text-transform: capitalize;
+                            }
+        
+                            &::placeholder{
+                                color: $contact_form_placeholder_color;
+                                font-size: $contact_form_placeholder_font_size;
+                                font-family: $poppins_font;
+                                text-transform: capitalize;
+                            }
+                        }
+    
+                        textarea{
+                            height: 106px;
+                            padding-top: 40px;
+                            padding-bottom: 20px;
+                            resize: none;
+                        }
+    
+                        button{
+                            width: 198px;
+                            height: 74px;
+                            margin-top: 10px;
+                            color: $contact_form_button_color;
+                            background: $primary_yellow;
+                            font-family: $poppins_font;
+                            font-weight: 700;
+                            @include transition($transition_bg_color);
+    
+                            &:hover{
+                                background: $color_white;
+                            }
+                        }
+                    }
+    
+                    @media (max-width: 991px){
+                        margin-bottom: 100px;
+                    }
+                }
+    
+                .map{
+                    height: 100%;
+                    max-height: 372px;
+                    position: relative;
+    
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+    
+            @media (min-width: 992px){
+                padding-left: 87px;
+            }
+        }
+    }
+}

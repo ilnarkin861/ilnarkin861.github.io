@@ -1,0 +1,82 @@
+@font-face {
+	font-family: "Homizio Nova";
+	src: url("../fonts/Homizio\ Nova.eot");
+	src: url("../fonts/Homizio\ Nova.eot?#iefix") format("embedded-opentype"),
+	url("../fonts/Homizio\ Nova.woff2") format("woff2"),
+	url("../fonts/Homizio\ Nova.woff") format("woff"),
+	url("../fonts/Homizio\ Nova.ttf") format("truetype"),
+	url("../fonts/Homizio\ Nova.svg#HomizioNova") format("svg");
+  }
+
+  @font-face {
+	font-family: "Homizio Nova Light";
+	src: url("../fonts/Homizio\ Nova\ Light.eot");
+	src: url("../fonts/Homizio\ Nova\ Light.eot?#iefix") format("embedded-opentype"),
+	url("../fonts/Homizio\ Nova\ Light.woff2") format("woff2"),
+	url("../fonts/Homizio\ Nova\ Light.woff") format("woff"),
+	url("../fonts/Homizio\ Nova\ Light.ttf") format("truetype"),
+	url("../fonts/Homizio\ Nova\ Light#HomizioNova-Light") format("svg");
+  }
+
+  body{
+	min-width: 320px;
+	color: $default_text_color;
+	background: $color_white;
+	font-family: $homizio_nova_font;
+	font-size: $default_font_size;
+  }
+
+  section{
+	.section-title,
+	.intro-text{
+		text-align: center;
+
+		span{
+			color: $main_color;
+		}
+	}
+
+	.section-title *{
+		font-size: $section_title_font_size;
+	}
+
+	.intro-text{
+		margin-top: 20px;
+		line-height: 1.5;
+	}
+  }
+
+  header,
+  section,
+  footer{
+	.container{
+		@media (min-width: 1860px){
+			max-width: 1815px!important;
+		}
+	}
+
+	.container, 
+	.container-lg, 
+	.container-md, 
+	.container-sm, 
+	.container-xl,
+	.container-xxl{
+		padding-left: 20px!important;
+		padding-right: 20px!important;
+
+		.row{
+			padding-left: -20px!important;
+			padding-right: -20px!important;
+
+			div[class^="col-"]{
+				padding-left: 20px!important;
+				padding-right: 20px!important;
+			}
+		}
+	 }
+  }
+
+.brandaloka-btn{
+	color: $color_white!important;
+	background: $main_color;
+ }

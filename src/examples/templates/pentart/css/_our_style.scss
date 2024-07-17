@@ -1,0 +1,51 @@
+#our-style{
+    .left{
+        background: $color_white;
+        background: linear-gradient(-131.6deg, $default_bg_color 374px, $color_white 375px);
+
+        .image{
+            width: 100%;
+            max-width: 645px;
+            margin-top: 360px;
+            position: relative;
+
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            @media (max-width: 991px){
+                margin-top: 150px;
+            }
+
+            @media (min-width: 1200px){
+                width: 67.19%;
+                height: 38.5%;
+            }
+
+            @media (min-width: 1400px){
+                margin-left: 92px;
+            }
+        }
+    }
+
+    .right{
+        padding-top: 136px;
+        padding-bottom: 100px;
+        background: $default_bg_color;
+        background: linear-gradient(48.4deg, $color_white 289px, $default_bg_color 290px);
+
+        .pentart-title{
+            margin-bottom: 84px;
+        }
+
+        .pentart-text{
+            margin-bottom: 106px;
+        }
+
+        @media (max-width: 1199px){
+            background: $default_bg_color;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+a{
+    text-decoration: none!important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6{
+    margin-bottom: 0;
+}
+
+p{
+    margin-bottom: 0;
+}
+
+button{
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+button,
+button:focus,
+a button,
+a button:focus{
+    outline: none;
+    box-shadow: none!important;
+}
+
+textarea:focus,
+input:focus,
+select:focus{
+    outline: none;
+}
+
+ul{
+    padding-left: 0;
+    margin-bottom: 0;
+
+    li{
+        list-style: none;
+    }
+}

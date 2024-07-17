@@ -1,0 +1,80 @@
+//Works
+section#works
+	.container
+		+showSectionTitle("Мои работы")
+		.wrapper
+
+			//Web design projects group
+			.projects-group
+				.row
+					.col-md-2
+						.projects-group-title.text-left.text-md-right.text-uppercase
+							h6 Web-дизайн
+					.col-md-10
+						.projects.web-design
+							.description
+								p.
+									Дизайн-концепты, прототипы сайтов выполненные на платформе Figma.
+							.row.m-md-0
+								each project, i in webDesignProjects
+									//Project
+									.col-lg-6.wow.fadeIn(data-wow-delay=(i+1)*100 + "ms")
+										.project
+											.browser
+												.top.d-flex.justify-content-between.align-items-center
+													.buttons
+														ul
+															li
+															li
+															li 
+													.address-bar
+												.content(style="background-image: url('"+project.poster+"')")
+													.overlay
+														.title.text-center
+															h6 #{project.title}
+															a(href=project.fullImage, onclick="ym(96794772,'reachGoal','show_video'); return loadImage('"+project.title+"', '"+project.fullImage+"')").zoom
+									//Project end
+			//Web design projects group end
+
+			//Layouts projects group
+			.projects-group
+				.row
+					.col-md-2
+						.projects-group-title.text-left.text-md-right.text-uppercase
+							h6 Верстка
+					.col-md-10
+						.projects.layouts.top-divider
+							.description
+								p.
+									Примеры шаблонов, сверстанных из открытых источников. Есть возможность посмотреть 
+									шаблон полноэкранном режиме, нажав на соответствующую кнопку. 
+									Также имеются ссылки на PSD файлы-источники и на репозиторий проекта на GitHub.
+							.row.m-md-0
+								each project, pi in layoutsProjects
+
+									//Project
+									.col-lg-4.col-sm-6.wow.fadeIn(data-wow-delay=(pi+1)*100 + "ms")
+										.project
+											.image(style="background-image: url("+project.image+")")
+												.overlay
+													.title.text-center
+														h6 #{project.title}
+											.bottom
+												.full-view
+													a(href=project.viewLink, onclick="ym(96794772,'reachGoal','show_template'); return loadTemplate('" +project.viewLink+ "');").template-link Посмотреть шаблон
+												.links.text-center
+													ul
+														li
+															a(href=project.psdLink rel='nofollow' target='_blank' title='Ссылка на PSD файл')
+																img(src='img/ps.svg' alt='')
+														li
+															a(href=project.gitHubLink target='_blank' title='Перейти на Github')
+																img(src='img/github.svg' alt='')
+									//Project end
+				//Layouts projects group end
+//Works end
+
+								
+				
+
+

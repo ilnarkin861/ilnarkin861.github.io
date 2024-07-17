@@ -1,0 +1,33 @@
+#social{
+    background: $main_color;
+    padding: 46px $default_block_padding 32px;
+    text-align: center;
+
+    ul{
+        font-size: 0;
+
+        li{
+            display: inline-block;
+            margin: 0 15px 16px;
+
+            a{
+                display: block;
+                width: 60px;
+                height: 60px;
+                color: $color_white;
+                border: 3px solid $color_white;
+                border-radius: 50%;
+                position: relative;
+
+                i{
+                    display: inline-block;
+                    font-size: $social_icons_font_size;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    @include prefix(transform, $translate_xy);
+                }
+            }
+        }
+    }
+}

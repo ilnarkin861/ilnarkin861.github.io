@@ -1,0 +1,87 @@
+[class*="hvr"]{
+    display: inline-block;
+    vertical-align: middle;
+    @include prefixed(transform, perspective(1px) translateZ(0));
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    @include prefixed(transition-property, color);
+    @include prefixed(transition-duration, $transition_duration);
+
+    &::before{
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: $button_hover_color;
+        @include prefixed(transition-property, transform);
+        @include prefixed(transition-duration, $transition_duration);
+        @include prefixed(transition-timing-function, ease-out);
+    }
+}
+
+.hvr-sweep-to-right,
+.hvr-sweep-to-left{
+    &::before{
+        @include prefixed(transform, scaleX(0));
+    }
+
+    &:hover{
+        &::before{
+            @include prefixed(transform, scaleX(1));
+        }
+    }
+}
+
+.hvr-sweep-to-right{
+    &::before{
+        @include prefixed(transform-origin, 0 50%);
+    }
+}
+
+.hvr-sweep-to-left{
+    &::before{
+        @include prefixed(transform-origin, 100% 50%);
+    }
+}
+
+.hvr-rectangle-out{
+    background: $main_color;
+
+    &::before{
+        @include prefixed(transform, scale(0));
+    }
+
+    &:hover{
+        &::before{
+            @include prefixed(transform, scale(1));
+        }
+    }
+}
+
+.hvr-sweep-to-bottom,
+.hvr-sweep-to-top{
+    &::before{
+        @include prefixed(transform, scaleY(0));
+    }
+
+    &:hover{
+        &::before{
+            @include prefixed(transform, scaleY(1));
+        }
+    }
+}
+
+.hvr-sweep-to-bottom{
+    &::before{
+        @include prefixed(transform-origin, 50% 0);
+    }
+}
+
+.hvr-sweep-to-top{
+    &::before{
+        @include prefixed(transform-origin, 50% 100%);
+    }
+}

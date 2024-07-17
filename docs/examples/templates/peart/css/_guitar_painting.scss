@@ -1,0 +1,29 @@
+#guitar-painting{
+    margin-top: -35px;
+
+    .content{
+        padding-top: 162px;
+        padding-left: 45px;
+
+        .title{
+            margin-bottom: 24px;
+        }
+
+        .text{
+            margin-bottom: 62px;
+        }
+    }
+
+    .image{
+        max-width: 275px;
+        max-height: 536px;
+        margin-top: 182px;
+        margin-left: 346px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}

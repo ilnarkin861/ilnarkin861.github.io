@@ -1,0 +1,26 @@
+.pentart-title{
+    max-width: 382px;
+
+    *{
+        color: $color_white;
+        font-family: $cochin_font;
+        font-size: $pentart-title_font_size;
+        font-weight: bold;
+        line-height: 1.13;
+    }
+
+    .colorized{
+        color: $primary_orange;
+    }
+}
+
+.pentart-text{
+    *{
+        color: $color_white;
+        line-height: 1.7;
+    }
+
+    @media (min-width: 992px){
+        max-width: 364px;
+    }
+}

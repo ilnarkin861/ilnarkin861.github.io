@@ -1,0 +1,156 @@
+#contacts{
+    padding: 13px 0 11px;
+    background: $section_bg_color;
+
+    .heading,
+    .content{
+        width: 100%;
+        max-width: 960px;
+    }
+
+    .heading{
+        margin-bottom: 20px;
+        padding-top: 46px;
+        border-top: 1px solid $contacts_border_color;
+        font-family: $secondary_font;
+
+        .title{
+            color: $contacts_title_color;
+            font-size: $contacts_title_font_size;
+            text-transform: capitalize;
+        }
+
+        .description{
+            font-size: $contacts_description_font_size;
+        }
+    }
+
+    .content{
+        border-bottom: 1px solid $contacts_border_color;
+
+        form{
+            width: 100%;
+            max-width: 580px;
+            text-align: right;
+
+            input,
+            textarea{
+                width: 100%;
+                margin-bottom: 16px;
+                padding: 0 14px;
+                color: $color_white;
+                background: $contact_form_inputs_bg_color;
+                border: none;
+
+                &::-webkit-input-placeholder{
+                    color: $main_text_color;
+                    font-family: $primary_font;
+                    font-size: $default_font_size;
+                }
+    
+                &::-moz-placeholder{
+                    color: $main_text_color;
+                    font-family: $primary_font;
+                    font-size: $default_font_size;
+                }
+    
+                &:-moz-placeholder{
+                    color: $main_text_color;
+                    font-family: $primary_font;
+                    font-size: $default_font_size;
+                }
+    
+                &:-ms-input-placeholder{
+                    color: $main_text_color;
+                    font-family: $primary_font;
+                    font-size: $default_font_size;
+                }
+    
+                &::placeholder{
+                    color: $main_text_color;
+                    font-family: $primary_font;
+                    font-size: $default_font_size;
+                }
+            }
+
+            input{
+                height: 37px;
+            }
+
+            textarea{
+                height: 150px;
+                padding-top: 12px;
+                resize: none;
+            }
+
+            button{
+                width: 90px;
+                height: 38px;
+                margin-bottom: 53px;
+                color: $contact_form_button_color;
+                background: $main_color;
+                font-weight: 700;
+                text-transform: uppercase;
+                @include prefixed(transition, all ease-in-out $transition_duration);
+
+                &:hover{
+                    color: $main_color;
+                    background: $color_white;
+                }
+            }
+        }
+
+        .info{
+            width: 100%;
+            max-width: 220px;
+            padding-bottom: 40px;
+
+            .text{
+                margin-top: -4px;
+                line-height: 1.6;
+
+                span{
+                    color: $contacts_bold_text_color;
+                    font-weight: 900;
+                }
+            }
+
+            ul{
+                margin-top: 68px;
+
+                li{
+                    margin-bottom: 5px;
+                    font-size: 0;
+                    font-weight: 700;
+
+                    .icon{
+                        display: inline-block;
+                        width: 15px;
+                        margin-right: 8px;
+                        text-align: center;
+                    }
+
+                    span{
+                        font-size: $default_font_size;
+                    }
+                }
+            }
+        }
+    }
+
+    @media (min-width: 680px){
+        .heading,
+        .content{
+            padding-left: 100px;
+        }
+
+        .content{
+            @include flexbox();
+            
+            .info{
+                padding-left: 19px;
+                padding-bottom: 0;
+            }
+        }   
+    }
+}

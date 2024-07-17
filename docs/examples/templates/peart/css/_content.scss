@@ -1,0 +1,37 @@
+.content{
+    max-width: 500px;
+
+    .title{
+        *{
+            color: $title_color;
+            font-family: $great_vibes_font;
+            font-size: $title_font_size;
+        }
+
+        .red{
+            color: $main_red;
+        }
+    }
+
+    .text{
+        padding-right: 10px;
+        color: $text_color;
+        font-size: $default_font_size;
+    }
+
+    &.left{
+        .text{
+            @media (min-width: 991px){
+                padding-right: 50px;
+            }
+        }
+    }
+
+    @media (max-width: 991px){
+        padding-left: 0!important;
+    }
+
+    @media (max-width: 1919px){
+        padding-top: 100px!important;
+    }
+}

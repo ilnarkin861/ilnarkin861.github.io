@@ -1,0 +1,53 @@
+#team{
+	padding-top: 58px;
+
+	.section-heading .title *{
+		font-size: $team_section_title_font_size;
+	}
+
+	.members{
+		margin-top: 20px;
+		position: relative;
+		z-index: 10;
+
+		.member{
+			margin-bottom: 66px;
+
+			.hexagon{
+				width: 200px;
+				height: 240px;
+				overflow: hidden;
+				margin: auto;
+
+				.content img{
+					width: 100%;
+					height: 100%;
+					object-fit: cover;
+				}
+			}
+
+			.info{
+				margin-top: 24px;
+				text-transform: uppercase;
+				text-align: center;
+				
+				.name{
+					font-family: $raleway_heavy_font;
+
+					*{
+						font-size: $default_font_size;
+					}
+				}
+
+				.career{
+					font-size: $team_career_font_size;
+					line-height: 0.3;
+				}
+			}
+		}
+
+		a.details-link{
+			margin: 4px auto 66px;
+		}
+	}
+}

@@ -1,0 +1,76 @@
+footer{
+	padding: 30px 0;
+	position: relative;
+	z-index: 10;
+
+	.left{
+		text-transform: uppercase;
+		font-family: $raleway_heavy_font;
+		font-size: $footer_font_size;
+		line-height: 1.2;
+		letter-spacing: 0.7px;
+
+		.copyright{
+			font-family: $raleway_font;
+			font-size: $default_font_size;
+			letter-spacing: 0;
+
+			.bold{
+				font-family: $raleway_heavy_font;
+			}  
+		}
+	}
+
+	.social{
+		ul{
+			font-size: 0;
+			margin-bottom:  0!important;
+
+			li{
+				display: inline-block;
+				margin-left: 4px;
+				margin-right: 4px;
+				
+				.hexagon{
+					width: 57px;
+					height: 68px;
+
+					.content{
+						border-left: $social_hexagon_left_right_border_width solid $main_color!important;
+						border-right: $social_hexagon_left_right_border_width solid $main_color!important;
+		
+						&::before,
+						&::after{
+							border-top: $social_hexagon_top_bottom_border_width solid $main_color!important;
+							border-bottom: $social_hexagon_top_bottom_border_width solid $main_color!important;
+						}
+
+						.icon{
+							position: absolute;
+							top: 50%;
+							left: 50%;
+							z-index: 10;
+							@include prefixed(transform, translate(-50%, -50%));
+						}
+					}
+				}
+			}
+		}
+	}
+
+	@media (min-width: 1200px){
+		margin-top: -226px;
+	}
+
+	@media (min-width: 1600px){
+		margin-top: -160px;
+	}
+
+	@media (max-width: 575px){
+		text-align: center;
+		
+		.left{
+			margin-bottom: 20px;
+		}
+	}
+}

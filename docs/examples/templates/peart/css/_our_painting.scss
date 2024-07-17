@@ -1,0 +1,28 @@
+#our-painting{
+    margin-top: -270px;
+
+    .content{
+        padding-top: 405px;
+
+        .title{
+            margin-bottom: 24px;
+        }
+
+        .text{
+            margin-bottom: 56px;
+        }
+    }
+
+    .image{
+        max-width: 382px;
+        max-height: 478px;
+        margin-top: 200px;
+        margin-left: 315px;
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+    }
+}

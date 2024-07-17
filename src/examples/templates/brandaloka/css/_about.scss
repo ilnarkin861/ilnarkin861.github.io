@@ -1,0 +1,150 @@
+#about{
+    padding: 160px 0 80px;
+    background: $primary_gray;
+
+    .intro-text{
+        margin-bottom: 100px;
+    }
+
+    .text{
+        max-width: 600px;
+        margin-bottom: 25px;
+        line-height: 1.4;
+
+        span{
+            color: $main_color;
+        }
+    }
+
+    .button{
+        display: inline-block;
+        margin-top: 40px;
+
+        a{
+            display: inherit;
+            padding: 10px 28px;
+        }
+    }
+
+    .main-slider{
+        position: relative;
+        margin-bottom: 60px;
+
+        .slider-container{
+            position: relative;
+
+            .slide{
+                width: 100%;
+                max-width: 888px;
+                position: relative;
+
+                &::before{
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    padding-top: 73.2%;
+                }
+
+                .image{
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                    img{
+                        width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+            }
+        }
+
+        .slider-pagination{
+            margin-top: 30px;
+            text-align: center;
+
+            ul{
+                padding-left: 0;
+
+                li{
+                    display: inline-block;
+
+                    &:not(:last-child){
+                        margin-right: 15px;
+                    }
+
+                    &.slick-active button{
+                        background: $main_color;
+                    }
+    
+                    button{
+                        width: 13px;
+                        height: 13px;
+                        background: $secondary_gray;
+                        overflow: hidden;
+                        text-indent: -100px;
+                        @include prefixed(transform, rotate(45deg));
+                    }
+                }
+            }
+        }
+
+        .slider-button{
+            width: 40px;
+            height: 40px;
+            background: $main_color;
+            position: absolute;
+            top: 50%;
+            @include prefixed(transform, translateY(-50%) rotate(45deg));
+
+            &::before{
+                content: "";
+                width: 14px;
+                height: 14px;
+                background-image: url("../img/slider_arrow.svg");
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                @include prefixed(transform, translate(-50%, -50%));
+            }
+
+            &.button-prev{
+                left: 38px;
+
+                &::before{
+                    @include prefixed(transform, translate(-50%, -50%) rotate(-135deg));
+                }
+            }
+
+            &.button-next{
+                right: 38px;
+
+                &::before{
+                    @include prefixed(transform, translate(-50%, -50%) rotate(45deg));
+                }
+            }
+
+            @media (max-width: 576px){
+                width: 30px;
+                height: 30px;
+
+                &::before{
+                    width: 12px;
+                }
+
+                &.button-prev{
+                    left: 20px;
+                }
+
+                &.button-next{
+                    right: 20px;
+                }
+            }
+        }
+    }
+}

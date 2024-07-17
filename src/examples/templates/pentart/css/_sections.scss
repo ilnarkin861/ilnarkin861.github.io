@@ -1,0 +1,49 @@
+header,
+section{
+    &.pentart-section{
+        width: 100%;
+        min-height: 1000px;
+    }
+
+    .left,
+    .right{
+        width: 50%;
+
+        .content-wrapper{
+            width: 100%;
+            max-width: 585px;
+        }
+
+        &.white{
+            @media (max-width: 1199px){
+                background: $color_white!important;
+            }
+        }
+
+        @media (max-width: 1200px){
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        @media (max-width: 991px){
+            width: 100%;
+        }
+    }
+}
+
+.outer_container{
+    width: 100%;
+    max-width: 1820px;
+    margin: auto;
+
+    @media (max-width: 1919px){
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+.container{
+    @media (min-width: 1200px){
+        max-width: 1170px;
+    }
+}

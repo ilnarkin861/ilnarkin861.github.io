@@ -1,0 +1,118 @@
+#contacts{
+    position: relative;
+
+    form{
+        .left{
+            padding-bottom: 260px;
+            background: $color_white;
+            background: linear-gradient(-131.6deg, $contacts_right_bg_color 377px, $color_white 378px);
+
+            .contacts-form{
+                width: 67.4%;
+                margin-top: 315px;
+
+                input,
+                textarea{
+                    width: 100%;
+                    color: $main_blue;
+                    background: none;
+                    border: none;
+                    border-bottom: 1px solid #363636;
+                    font-size: $contacts_form_font_size;
+
+                    &::-webkit-input-placeholder{
+                        color: $contacts_form_placeholder_color;
+                        font-size: $contacts_form_placeholder_font_size;
+                        text-transform: capitalize;
+                    }
+
+                    &::-moz-placeholder{
+                        color: $contacts_form_placeholder_color;
+                        font-size: $contacts_form_placeholder_font_size;
+                        text-transform: capitalize;
+                    }
+
+                    &:-moz-placeholder{
+                        color: $contacts_form_placeholder_color;
+                        font-size: $contacts_form_placeholder_font_size;
+                        text-transform: capitalize;
+                    }
+
+                    &:-ms-input-placeholder{
+                        color: $contacts_form_placeholder_color;
+                        font-size: $contacts_form_placeholder_font_size;
+                        text-transform: capitalize;
+                    }
+
+                    &::placeholder{
+                        color: $contacts_form_placeholder_color;
+                        font-size: $contacts_form_placeholder_font_size;
+                        text-transform: capitalize;
+                    }
+                }
+
+                input{
+                    padding: 10px 0;
+                    margin-bottom: 20px;
+                }
+
+                textarea{
+                    height: 38px;
+                    max-height: 150px;
+                    margin-top: 103px;
+                    line-height: 26px;
+                    resize: none;
+                    overflow: scroll;
+                }
+                
+                @media (min-width: 992px){
+                    margin-left: 50px;
+                }
+
+                @media (max-width: 991px){
+                    width: 100%;
+                    max-width: 646px;
+                    margin-top: 150px;
+                }
+
+                @media (max-width: 1600px) and (min-width: 1200px){
+                    width: 50%;
+                }
+            }
+        }
+
+        .right{
+            padding-top: 130px;
+            padding-bottom: 180px;
+            background: $contacts_right_bg_color;
+            background: linear-gradient(48.4deg, $color_white 286px, $contacts_right_bg_color 287px);
+
+            .pentart-title{
+                margin-bottom: 122px;
+            }
+
+            .button{
+                margin-top: 94px;
+
+                button{
+                    width: 215px;
+                    height: 66px;
+                    border-radius: 33px;
+                    font-size: $default_font_size;
+                }
+            }
+
+            @media (max-width: 1199px){
+                background: $contacts_right_bg_color;
+            }
+        }
+
+        @media (min-width: 992px){
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            right: 0;
+        }
+    }
+}

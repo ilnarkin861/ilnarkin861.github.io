@@ -1,0 +1,139 @@
+#contacts{
+    margin-top: -238px;
+
+    .content{
+        padding-top: 386px;
+        padding-right: 50px;
+
+        .title{
+            margin-bottom: 24px;
+        }
+
+        .text{
+            margin-bottom: 40px;
+        }
+
+        @media (max-width: 991px){
+            padding-top: 0!important;
+        }
+    }
+
+    .outer{
+        img{
+            @media (max-width: 1300px){
+                opacity: 0;
+            }
+        }
+
+        .inner{
+            .contact-form{
+                max-width: 450px;
+                margin-top: 266px;
+                margin-left: 300px;
+
+                form{
+                    input,
+                    textarea{
+                        width: 100%;
+                        margin-bottom: 24px;
+                        padding-left: 14px;
+                        color: $black_secondary;
+                        background-color: transparent;
+                        border: 1px solid $contact_form_elements_color;
+
+                        &::-webkit-input-placeholder{
+                            color: $contact_form_elements_color;
+                            font-family: $raleway_font;
+                            text-transform: capitalize;
+                        }
+
+                        &::-moz-placeholder{
+                            color: $contact_form_elements_color;
+                            font-family: $raleway_font;
+                            text-transform: capitalize;
+                        }
+
+                        &:-moz-placeholder{
+                            color: $contact_form_elements_color;
+                            font-family: $raleway_font;
+                            text-transform: capitalize;
+                        }
+
+                        &:-ms-input-placeholder{
+                            color: $contact_form_elements_color;
+                            font-family: $raleway_font;
+                            text-transform: capitalize;
+                        }
+
+                        &::placeholder{
+                            color: $contact_form_elements_color;
+                            font-family: $raleway_font;
+                            text-transform: capitalize;
+                        }
+                    }
+
+                    input{
+                        height: 44px;
+                        border-radius: 4px;
+                    }
+
+                    textarea{
+                        height: 140px;
+                        padding-top: 60px;
+                        border-radius: 13px;
+                        resize: none;
+                    }
+
+                    button{
+                        width: 164px;
+                        height: 60px;
+                        color: $color_white;
+                        background-color: $contact_form_button_bg;
+                        border-radius: 30px;
+                        font-family: $raleway_font;
+                        font-weight: 700;
+                        @include transition($transition_all);
+
+                        &:hover{
+                            color: $contact_form_button_bg;
+                            background-color: $color_white;
+                        }
+                    }
+                }
+                
+                @media (max-width: 991px) {
+                    width: 100%;
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+
+                @media (max-width: 1600px){
+                    margin: 0;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    @include translate($translate_xy);
+                }
+
+                @media (max-width: 1600px) and (min-width: 1301px){
+                    margin-left: 50px;
+                }
+            }
+
+            @media (max-width: 1300px){
+                @include gradient();
+                border-radius: 50px;
+            }
+        }
+
+        @media (max-width: 1300px){
+            min-height: 600px;
+        }
+
+    }
+
+    @media (max-width: 1600px){
+        padding-top: 0;
+        margin-top: 150px!important;
+    }
+}

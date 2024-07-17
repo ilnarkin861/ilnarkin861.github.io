@@ -1,0 +1,22 @@
+@mixin box-shadow($params) {
+    -webkit-box-shadow: $params;
+    -moz-box-shadow: $params;
+    box-shadow: $params;
+}
+
+@mixin translate($params){
+    -webkit-transform: $params;
+    -ms-transform: $params;
+    transform: $params;
+}
+
+@mixin transition($params){
+    -webkit-transition: $params;
+    -o-transition: $params;
+    transition: $params;
+}
+
+@mixin clipPath($param){
+    -webkit-clip-path: $param;
+    clip-path: $param;
+}

@@ -1,0 +1,27 @@
+.details-link{
+    *{
+        display: inline-block;
+        color: $details_link_color;
+        font-family: $great_vibes_font;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 1;
+        position: relative;
+        @include transition($transition_color);
+
+        &:after{
+            content: "";
+            width: 87px;
+            height: 12px;
+            background: url("../img/arrow_right.svg") no-repeat;
+            position: absolute;
+            top: 50%;
+            right: -107px;
+            @include translate($translate_y);
+        }
+
+        &:hover{
+            color: $main_red;
+        }
+    }
+}

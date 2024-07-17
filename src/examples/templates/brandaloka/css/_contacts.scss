@@ -1,0 +1,77 @@
+#contacts{
+    padding: 140px 0;
+
+    form{
+        margin-top: 70px;
+
+        .input-wrapper{
+            margin-bottom: 25px;
+            position: relative;
+
+            &.required::before{
+                content: "*";
+                display: inline-block;
+                color: $main_color;
+                position: absolute;
+                top: 8px;
+                right: 22px;
+                font-size: 26px;
+            }
+
+            input,
+            textarea{
+                width: 100%;
+                padding: 0 40px 0 18px;
+                color: $main_color;
+                border-width: 1px;
+                border-style: solid;
+                border-color: transparent;
+                background: $primary_gray;
+                @include prefixed(transition, all ease-in-out $transition_duration);
+
+                &:focus{
+                    border-color: $main_color;
+                    background: none;
+                }
+
+                &::-webkit-input-placeholder{
+                    color: $secondary_gray;
+                }
+    
+                &::-moz-placeholder{
+                    color: $secondary_gray;
+                }
+    
+                &:-moz-placeholder{
+                    color: $secondary_gray;
+                }
+    
+                &:-ms-input-placeholder{
+                    color: $secondary_gray;
+                }
+    
+                &::placeholder{
+                    color: $secondary_gray;
+                }
+            }
+
+            input{
+                height: 60px;
+            }
+
+            textarea{
+                height: 230px;
+                padding-top: 16px;
+                resize: none;
+            }
+        }
+
+        button{
+            display: block;
+            width: 150px;
+            height: 54px;
+            margin: 68px auto 0;
+            font-size: 20px;
+        }
+    }
+}

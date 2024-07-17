@@ -1,0 +1,224 @@
+#banner{
+    width: 100%;
+    position: relative;
+    z-index: 5;
+
+    @media (min-width: 1200px){
+        @include flexbox();
+        @include justifyEnd();
+    }
+
+    .rhombs-container{
+        width: 100%;
+        max-width: 1084px;
+        min-height: 1084px;
+        margin-right: -8px;
+        margin-top: 84px;
+        position: relative;
+
+        @media (min-width: 1200px){
+            &::before{
+                content: "";
+                width: 74px;
+                height: 74px;
+                background: $main_color;
+                position: absolute;
+                top: 220px;
+                left: 148px;
+                @include prefix(transform, rotate(45deg));
+            }   
+        }
+
+        @media (max-width: 1199px){
+            margin: 200px auto 0;
+            padding: 0 $default_block_padding;
+        }
+
+        .rhomb{
+            *{
+                color: $color_white;
+            }
+
+            p, a{
+                font-size: $banner_default_font_size;
+            }
+
+            img{
+                width: 100%;
+                height: 100%;
+                -o-object-fit: cover;
+                object-fit: cover;
+                @include prefix(transform, rotate(-45deg) scale(1.42));
+            }
+
+            @media (max-width: 1199px){
+                margin: auto;
+            }
+        }
+
+        .small-rhomb{
+            width: 100%;
+            height: 100%;
+
+            @media (max-width: 1199px){
+                margin-top: 50px;
+
+                .content{
+                    padding: 50px $default_block_padding!important;
+                }
+            }
+
+            @media (min-width: 1200px){
+                position: absolute!important;
+
+                &.rhomb-black{
+                    top: 234px;
+                    left: -214px;
+                    z-index: 5;
+                }
+
+                &.rhomb-small-image{
+                    left: 244px;
+                    bottom: -126px;
+                }
+
+                &.rhomb-blue{
+                    left: -11px;
+                    bottom: -30px;
+                }
+            }
+        }
+
+        .rhomb-black::before,
+        .rhomb-blue::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            @include prefix(transition, $transition_all);
+
+            @media (min-width: 1200px){
+                @include prefix(transform, rotate(45deg) scale(0.71));
+            }
+        }
+
+        .rhomb-big-image{
+            max-width: 1084px;
+            max-height: 1084px;
+            overflow: hidden;
+            @include prefix(transform, rotate(45deg) scale(0.71));
+        }
+        
+        .rhomb-black{
+            max-width: 568px;
+            max-height: 568px;
+            position: relative;
+
+            &::before{
+                background: $color_black;
+                @include prefix(box-shadow, $banner_black_rhomb_shadow);
+                z-index: -1;
+            }
+
+            .content{
+                padding: 167px 133px 178px 172px;
+
+                .title{
+                    margin-bottom: 17px;
+                    text-transform: uppercase;
+
+                    h3{
+                        color: $main_color!important;
+                        font-size: $banner_black_rhomb_title_font_size;
+                        font-weight: 900;
+                    }
+                }
+
+                .text{
+                    line-height: 1.53;
+                }
+
+                .button{
+                    margin-top: 46px;
+
+                    a{
+                        margin-left: 4px;
+                        padding: 10px 18px 9px 18px;
+                        background: $main_color;
+                        border: 1px solid transparent;
+                        border-radius: 35px;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                        @include prefix(transition, $transition_all);
+
+                        &:hover{
+                            background: $color_white;
+                            color: $main_color;
+                            border: 1px solid $main_color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .rhomb-small-image{
+            max-width: 586px;
+            max-height: 586px;
+            
+            .image-wrapper{
+                overflow: hidden;
+                @include prefix(transform, rotate(45deg) scale(0.71));
+            }
+        }
+
+        .rhomb-blue{
+            max-width: 458px;
+            max-height: 458px;
+            position: relative;
+            z-index: 5;
+
+            &::before{
+                background: $main_color;                  
+            }
+
+            .content{
+                padding: 81px 87px 150px 108px;
+                position: relative;
+
+                @media (min-width: 1200px) {
+                    .number{
+                        padding-left: 76px;
+                    }
+
+                    .title{
+                        padding-left: 11px;
+                    }
+                }
+
+                .number{
+                    color: $banner_blue_rhomb_number_color;
+                    font-size: $banner_blue_rhomb_number_font_size;
+                    font-weight: 900;
+                    line-height: 1;
+                }
+
+                .title{
+                    margin-top: 13px;
+
+                    h3{
+                        font-size: $banner_blue_rhomb_title_font_size;
+                        font-weight: 700;
+                        text-transform: uppercase;
+                    }
+                }
+
+                .text{
+                    margin-top: 16px;
+                    line-height: 1.2;
+                }
+            }
+        }
+    }
+}

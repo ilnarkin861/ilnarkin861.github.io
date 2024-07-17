@@ -1,0 +1,104 @@
+html,
+body{
+	height: 100%;
+}
+body{
+	width: 100%;
+	min-width: 320px;
+	color: $main_color;
+	font-family: $primary_font;
+	font-size: $default_font_size;
+	font-weight: 400;
+	position: relative;
+
+	&.fixed{
+		overflow: hidden;
+	}
+}
+
+.ui-tooltip{
+	color: $color_white;
+	background-color: $main_color;
+	border: none;
+	box-shadow: none;
+
+	@media (max-width: 1199px){
+		display: none;
+	}
+}
+
+section{
+	.section-title{
+		width: 100%;
+		max-width: 260px;
+		margin: 0 auto 70px;
+		padding: 16px 0;
+		color: $color_white;
+		background-color: $main_color;
+		font-size: $section_title_font_size;
+		font-weight: 700;
+		text-align: center;
+		position: relative;
+
+		*{
+	
+			line-height: 1;
+		}
+
+		&::before{
+			content: "";
+			display: block;
+			width: 200%;
+			height: 1px;
+			background-color: inherit;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			z-index: -1;
+			transform: translate(-50%, -50%)
+		}
+
+		.corner{
+			width: 28px;
+			height: 50%;
+			position: absolute;
+
+
+			&.corner-left-top,
+			&.corner-right-top{
+				top: 0;
+			}
+
+			&.corner-left-bottom,
+			&.corner-right-bottom{
+				bottom: 0;
+			}
+
+			&.corner-left-top,
+			&.corner-left-bottom{
+				left: -28px;
+			}
+
+			&.corner-right-top,
+			&.corner-right-bottom{
+				right: -28px;
+			}
+
+			&.corner-left-top{
+				background: linear-gradient(to right bottom, transparent 50%, $main_color 51%);
+			}
+
+			&.corner-right-top{
+				background: linear-gradient(to left bottom, transparent 50%, $main_color 51%);
+			}
+
+			&.corner-left-bottom{
+				background: linear-gradient(to right top, transparent 50%, $main_color 51%);
+			}
+
+			&.corner-right-bottom{
+				background: linear-gradient(to left top, transparent 50%, $main_color 51%);
+			}
+		}
+	}
+}

@@ -1,0 +1,151 @@
+@font-face {font-family: "Raleway Heavy";
+	src: url("../fonts/Raleway Heavy.eot");
+	src: url("../fonts/Raleway Heavy.eot?#iefix") format("embedded-opentype"),
+	url("../fonts/Raleway Heavy.woff2") format("woff2"),
+	url("../fonts/Raleway Heavy.woff") format("woff"),
+	url("../fonts/Raleway Heavy.ttf") format("truetype"),
+	url("../fonts/Raleway Heavy.svg#Raleway Heavy") format("svg");
+ }
+
+body{
+	min-width: 320px;
+	padding-bottom: 12px;
+	color: $main_color;
+	background: $color_white;
+	font-family: $raleway_font;
+	font-size: $default_font_size;
+	font-weight: 400;
+}
+
+.section-heading{
+	text-align: center;
+
+	.title{
+		text-transform: uppercase;
+		font-family: $raleway_heavy_font;
+
+		*{
+			font-size: 30px;
+		}
+	}
+
+	.description{
+		line-height: 1.1;
+
+		span{
+			font-weight: 700;
+		}
+	}
+}
+
+.details-link{
+	display: block;
+	width: 100%;
+	max-width: 284px;
+	position: relative;
+	
+	&:hover{
+		.wrapper,
+		[class^="corner-"]{
+			background: none;
+		}
+
+		.wrapper{
+			color: $main_color;
+			border-top: $details_link_border_width solid $main_color;
+			border-bottom: $details_link_border_width solid $main_color;
+		}
+
+		.corner-top-left,
+		.corner-bottom-left{
+			border-left: $details_link_border_width solid $main_color;
+		}
+
+		.corner-top-right,
+		.corner-bottom-right{
+			border-right: $details_link_border_width solid $main_color;
+		}
+	}
+	
+	.wrapper{
+        width: calc(100% - 34px);
+		height: 60px;
+		margin: auto;
+		color: $color_white;
+		background: $main_color;
+		border-top: $details_link_border_width solid transparent;
+		border-bottom: $details_link_border_width solid transparent;
+		position: relative;
+		z-index: 3;
+
+		.text{
+			width: 100%;
+			font-size: $details_link_font_size;
+			text-transform: uppercase;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			@include prefixed(transform, translateY(-50%));
+
+			.bold{
+				font-family: $raleway_heavy_font;
+			}
+		}
+    }
+
+	[class^="corner-"]{
+		width: 17px;
+		height: 50%;
+		background: $main_color;
+		position: absolute;
+	}
+
+	.corner-top-left,
+	.corner-bottom-left{
+		left: 0;
+		border-left: 2px solid transparent;
+	}
+
+	.corner-top-right,
+	.corner-bottom-right{
+		right: 0;
+		border-right: 2px solid transparent;
+	}
+
+	.corner-top-left,
+	.corner-bottom-right{
+		@include prefixed(transform, skewX(-29.7deg));
+	}
+
+	.corner-bottom-left,
+	.corner-top-right{
+		@include prefixed(transform, skewX(29.7deg));
+	}
+
+	.corner-top-left,
+	.corner-top-right{
+		top: 0;
+	}
+
+	.corner-bottom-left,
+	.corner-bottom-right{
+		bottom: 0;
+	}
+
+	.corner-top-left{
+		@include prefixed(transform-origin, left bottom);
+	}
+
+	.corner-bottom-left{
+		@include prefixed(transform-origin, left top);
+	}
+
+	.corner-top-right{
+		@include prefixed(transform-origin, right bottom);
+	}
+
+	.corner-bottom-right{
+		@include prefixed(transform-origin, right top);
+	}
+}

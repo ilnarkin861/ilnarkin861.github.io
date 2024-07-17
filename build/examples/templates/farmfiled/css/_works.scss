@@ -1,0 +1,116 @@
+#works{
+    margin-top: -41px;
+
+    .works-wrapper{
+        min-height: 915px;
+        padding-top: 112px;
+        background: $secondary_yellow;
+
+        .section-title{
+            margin-top: -9px;
+        }
+
+        .works-slider{
+            margin-top: 40px;
+            overflow: hidden;
+
+            .slide{
+                .image-wrapper{
+                    -webkit-filter: drop-shadow(0 0 3px rgba(30, 30, 29, 0.2));
+                    filter: drop-shadow(0 0 3px rgba(30, 30, 29, 0.2));
+
+                    .image{
+                        max-width: 300px;
+                        max-height: 222px;
+                        position: relative;
+                        @include clipPath($works_image_clip_path);
+
+                        img{
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+                .title{
+                    max-width: 300px;
+                    margin-top: 21px;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+
+                    *{
+                        color: $main_color;
+                        font-size: $works_title_font_size;
+                        line-height: 1;
+                        letter-spacing: 1px;
+                    }
+                }
+
+                .section-text{
+                    max-width: 302px;
+                    margin-top: 26px;
+                }
+
+                .button{
+                    margin-top: 38px;
+
+                    button{
+                        width: 136px;
+                        height: 44px;
+                        color: $button_color;
+                        background: $main_color;
+                        font-family: $poppins_font;
+                        @include transition($transition_all);
+
+                        &:hover{
+                            color: $main_color;
+                            background: $color_white;
+                        }
+                    }
+                }
+            }
+        }
+
+        @media (min-width: 576px){
+            padding-right: 67px;
+        }
+    }
+
+    .slider-buttons{
+        right: -36px;
+
+        button{
+            background: $color_white;
+
+            &:hover{
+                background: $works_slider_button_bg_color;
+
+                svg{
+                    fill: $color_white;
+                }
+            }
+
+            svg{
+                fill: $main_color;
+            }
+        }
+
+        @media (min-width: 576px){
+            top: 50%;
+            @include translate($translate_y);
+        }
+
+        @media (max-width: 991px) and (min-width: 576px){
+            right: 30px;
+        }
+        
+        @media (max-width: 575px){
+            width: 100%;
+            padding-left: 30px;
+            left: 0;
+            bottom: 0;
+            text-align: right;
+        }
+    }
+}

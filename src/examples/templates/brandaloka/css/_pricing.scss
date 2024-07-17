@@ -1,0 +1,69 @@
+#pricing{
+    padding: 150px 0 180px;
+    background: $primary_gray;
+    overflow: hidden;
+
+    .offers{
+        .offer{
+            margin-top: 80px;
+            padding: 30px 44px 0;
+            background: $color_white;
+            text-align: center;
+
+            &:hover{
+                .title,
+                .price{
+                    color: $main_color;
+                }
+
+                .button a{
+                    background: $main_color;
+                }
+            }
+
+            .title,
+            .price{
+                @include prefixed(transition, color ease-in-out $transition_duration);
+            }
+
+            .title{
+                margin-bottom: 20px;
+                font-size: $offer_title_font_size;
+            }
+
+            .price{
+                font-size: $offer_price_font_size;
+            }
+
+            .details{
+                margin-top: 20px;
+                margin-bottom: 50px;
+
+                ul{
+                    padding-left: 0;
+
+                    li{
+                        padding: 10px 0;
+                        line-height: 1;
+
+                        &:not(:last-child){
+                            border-bottom: 1px solid $secondary_gray;
+                        }
+                    }
+                }
+            }
+
+            .button{
+                @include prefixed(transform, translateY(50%));
+
+                a{
+                    padding: 17px 40px 16px 40px;
+                    color: $color_white;
+                    background: $offer_button_bg_color;
+                    font-size: $offer_button_font_size;
+                    @include prefixed(transition, background-color ease-in-out $transition_duration);
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,41 @@
+include data/assets
+include data/works
+include data/skills
+include data/services
+include data/contacts
+include mixins
+
+
+doctype html
+html(lang="en")
+	head
+		meta(charset="UTF-8")
+		meta(http-equiv="robots" content="noindex, nofollow")
+		meta(http-equiv="X-UA-Compatible" content="IE=edge")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0")
+		title Портфолио Ильнара Гафурова
+		link(rel="icon", type="image/x-icon", href="./favicon.ico")
+		each style in styles
+			link(rel="stylesheet" href=style)
+
+		<!-- Yandex.Metrika counter -->
+		script
+			include ../js/counter.js
+		noscript
+			div
+				img(src="https://mc.yandex.ru/watch/96794772", style="position:absolute; left:-9999px;" , alt="")
+		<!-- /Yandex.Metrika counter -->
+		
+	body
+
+		include header
+		include about
+		include services
+		include skills
+		include works
+		include footer
+		include template-loader
+		include image_loader
+
+		each script in scripts
+			script(src=script)

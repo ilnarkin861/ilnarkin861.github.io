@@ -1,0 +1,97 @@
+@font-face {
+    font-family: "Helvetica";
+    src: url("../fonts/Helvetica.woff2") format("woff2"),
+    url("../fonts/Helvetica.woff") format("woff"),
+    url("../fonts/Helvetica.ttf") format("truetype"),
+    url("../fonts/Helvetica.svg#Helvetica Regular") format("svg");
+}
+
+@font-face {
+    font-family: 'Helvetica Bold';
+    src: url('../fonts/Helvetica-Bold.eot');
+    src: local('Helvetica Bold'), local('Helvetica-Bold'),
+        url('../fonts/Helvetica-Bold.eot?#iefix') format('embedded-opentype'),
+        url('../fonts/Helvetica-Bold.woff2') format('woff2'),
+        url('../fonts/Helvetica-Bold.woff') format('woff'),
+        url('../fonts/Helvetica-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Berlin Sans FB Demi Bold";
+    src: url("../fonts/Berlin Sans FB Demi Bold.woff2") format("woff2"),
+    url("../fonts/Berlin Sans FB Demi Bold.woff") format("woff"),
+    url("../fonts/Berlin Sans FB Demi Bold.ttf") format("truetype"),
+    url("../fonts/Berlin Sans FB Demi Bold.svg#Berlin Sans FB Demi Bold") format("svg");
+}
+
+body{
+    min-width: 320px;
+    background: $main_color;
+    font-family: $berlin_sans_fb_font;
+    font-size: $default_font_size;
+    
+    &.hidden{
+        overflow: hidden;
+
+        &::before{
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 900;
+        }
+    }
+}
+
+section,
+footer{
+    .container{
+        margin: 0!important;
+        @media (min-width: 1300px){
+            max-width: 1227px;
+        }
+    }
+
+    .content-wrapper{
+        width: 85.73%;
+        position: relative;
+        @include transition($transition_all);
+
+        .trapezoid{
+            &.left{
+                @include clipPath($left_clip_path);
+            }
+    
+            &.right{
+                @include clipPath($right_clip_path);
+            }    
+        }
+
+        @media (max-width: 991px){
+            width: 100%;
+        }
+    }
+
+    .section-title{
+        *{
+            color: $color_white;
+            font-size: $section_title_font_size;
+        }
+    
+        .colorized{
+            color: $main_color;
+        }
+    }
+    
+    .section-text{
+        *{
+            color: $main_color;
+            font-family: $poppins_font;
+            font-size: $default_font_size;
+            line-height: 1.64;
+        }   
+    }
+}

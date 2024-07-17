@@ -1,0 +1,194 @@
+footer{
+    width: 100%;
+    margin-top: -40px;
+    
+    .content-wrapper{
+        -webkit-filter: drop-shadow(0 0 46px rgba(30, 30, 29, 1));
+        filter: drop-shadow(0 0 46px rgba(30, 30, 29, 1));
+
+        .footer-wrapper{
+            min-height: 918px;
+            padding-top: 205px;
+            padding-bottom: 212px;
+            position: relative;
+
+            &::before{
+                content: "";
+                width: 100%;
+                height: 100%;
+                background-image: url("../img/footer_bg.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                opacity: 0.11;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+            }
+
+            .logo a{
+                color: $color_white;
+                font-size: 60px;
+            }
+
+            .footer-columns{
+                margin-top: 125px;
+                color: $color_white;
+                font-family: $helvetica_font;
+
+                .footer-column{
+                    margin-bottom: 60px;
+
+                    &.menu-column{
+                        @media (min-width: 1320px){
+                            padding-left: 45px;
+                        }
+                    }
+
+                    &.products-column{
+                        @media (min-width: 1320px){
+                            padding-left: 55px;
+                        }
+                    }
+
+                    &.newsletter-column{
+                        @media (min-width: 1320px){
+                            padding-left: 17px;
+                        }
+                    }
+
+                    .column-title{
+                        margin-bottom: 10px;
+
+                        *{
+                            font-family: $helvetica_bold_font;
+                            font-size: $footer_column_title_font_size;
+                        }
+                    }
+
+                    .contacts{
+                        ul li{
+                            margin-bottom: 12px;
+
+                            i{
+                                font-size: $footer_contacts_icon_font_size;
+
+                                &.map{
+                                    margin-right: 8px;
+                                }
+
+                                &.phone{
+                                    margin-right: 4px;
+                                }
+
+                                &.email{
+                                    margin-right: 9px;
+                                }
+                            }
+                        }
+                    }
+
+                    .social-links{
+                        margin-top: 42px;
+
+                        ul li{
+                            display: inline-block;
+                            margin-right: 20px;
+                        }
+                    }
+
+                    .menu{
+                        ul li{
+                            margin-bottom: 6px;
+
+                            a{
+                                color: $color_white;
+                            }
+                        }
+                    }
+
+                    .products{
+                        max-width: 146px;
+                        line-height: 1.82;
+                    }
+
+                    .subscribe-form{
+                        max-width: 272px;
+                        min-height: 174px;
+                        margin-top: 15px;
+                        padding-top: 21px;
+                        background: $primary_yellow;
+
+                        form{
+                            input,
+                            button{
+                                display: block;
+                            }
+    
+                            input{
+                                width: 100%;
+                                max-width: 233px;
+                                margin: auto;
+                                padding-bottom: 17px;
+                                background: none;
+                                border: none;
+                                border-bottom: 1px solid $subscribe_input_border_color;
+                                text-align: center;
+
+                                &::-webkit-input-placeholder{
+                                    color: $subscribe_input_placeholder_color;
+                                    font-family: $helvetica_font;
+                                    font-size: $subscribe_input_placeholder_font_size;
+                                    text-align: center;
+                                    text-transform: capitalize;
+                                }
+            
+                                &::-moz-placeholder{
+                                    color: $subscribe_input_placeholder_color;
+                                    font-family: $helvetica_font;
+                                    font-size: $subscribe_input_placeholder_font_size;
+                                    text-align: center;
+                                    text-transform: capitalize;
+                                }
+            
+                                &:-moz-placeholder{
+                                    color: $subscribe_input_placeholder_color;
+                                    font-family: $helvetica_font;
+                                    font-size: $subscribe_input_placeholder_font_size;
+                                    text-align: center;
+                                    text-transform: capitalize;
+                                }
+            
+                                &:-ms-input-placeholder{
+                                    color: $subscribe_input_placeholder_color;
+                                    font-family: $helvetica_font;
+                                    font-size: $subscribe_input_placeholder_font_size;
+                                    text-align: center;
+                                    text-transform: capitalize;
+                                }
+            
+                                &::placeholder{
+                                    color: $subscribe_input_placeholder_color;
+                                    font-family: $helvetica_font;
+                                    font-size: $subscribe_input_placeholder_font_size;
+                                    text-align: center;
+                                    text-transform: capitalize;
+                                }
+                            }
+
+                            button{
+                                margin: 48px auto 0;
+                                color: $subscribe_form_button_color;
+                                font-family: $helvetica_bold_font;
+                            }
+                        }
+                    }
+                }
+            }
+
+            @media (min-width: 992px){
+                padding-left: 72px;
+            }
+        }
+    }
+}

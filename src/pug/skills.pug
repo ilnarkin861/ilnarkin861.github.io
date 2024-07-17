@@ -1,0 +1,23 @@
+//Skills
+section#skills
+	+showSectionTitle("Мои навыки", false)
+	.wrapper
+		.container
+			each group in skillsGroups
+				//Skills group
+				.skills-group
+					.heading.text-uppercase
+						h6 #{group.groupTitle}
+					.skill-items
+						.row
+							each skill in group.skills
+								//Skill item
+								.col-lg-3.col-sm-6
+									.item
+										.title
+											span #{skill.title}
+										.skill-progress-bar(data-width=skill.percent + '%')
+											.inner
+								//Skill item end
+				//Skills group end
+//Skills end

@@ -1,0 +1,47 @@
+#mobile-menu{
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 50px 40px;
+    background: $mobile_menu_bg_color;
+    overflow: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 200;
+
+    &.visible{
+        display: block;
+    }
+
+    .button{
+        text-align: right;
+
+        button{
+            width: 35px;
+            height: 35px;
+            background-image: url("../img/close.svg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            opacity: 0.6;
+        }
+    }
+
+    .menu{
+        margin-top: 100px;
+        text-align: center;
+        
+        ul li{
+            margin-bottom: 18px;
+            font-size: 22px;
+
+            a{
+                color: $color_white;
+
+                &.active{
+                    color: $main_color;
+                }
+            }
+        }
+    }
+}
